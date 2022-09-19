@@ -18,13 +18,12 @@ export default ActionBtn;
 const styles = StyleSheet.create({
   // Shadowed Btn Container
   btnBox: {
-    width: 300,
+    width: "100%",
     height: 50,
     backgroundColor: "#222",
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 20,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,

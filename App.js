@@ -1,20 +1,33 @@
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet } from "react-native";
-import { OAuthScreeen } from "./src/screens";
+import {StyleSheet} from "react-native";
+import {OAuthScreen, CreateAccount, SignInScreen} from "./src/screens";
+
+// Navigation
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import SafeAreaView from "react-native-safe-area-view";
+import {SafeAreaProvider} from "react-native-safe-area-context";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  return (
-    <SafeAreaView style={styles.container}>
-      <OAuthScreeen />
-      <StatusBar style="auto" />
-    </SafeAreaView>
-  );
+    return (
+        <SafeAreaProvider>
+            <SafeAreaView style={styles.container}>
+                <NavigationContainer>
+                    <Stack.Navigator initialRouteName={"OAuth"} screenOptions={{headerShown: false}}>
+                        <Stack.Screen name="OAuth" component={OAuthScreen}/>
+                        <Stack.Screen name="CreateAccount" component={CreateAccount}/>
+                        <Stack.Screen name="SignIn" component={SignInScreen}/>
+                    </Stack.Navigator>
+                </NavigationContainer>
+            </SafeAreaView>
+        </SafeAreaProvider>
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    marginTop: 50,
-  },
+    container: {
+        flex: 1,
+        backgroundColor: "#fff",
+    },
 });
