@@ -1,7 +1,8 @@
 import {View, Text, Image, Pressable} from 'react-native'
+import {Screen} from "react-native-screens";
+import {FontAwesome} from "@expo/vector-icons";
 import {Formik} from "formik";
 import * as yup from "yup";
-import {FontAwesome} from "@expo/vector-icons";
 
 import {CheckBox, InputWithIcon, KeyboardAvoidingWrapper, OAuthBtn, TextBtnContained} from "../../components";
 import {SignInWithPasswordStyles as styles} from './Auth.styles'
@@ -17,7 +18,7 @@ const SignInScreen = ({navigation}) => {
 
     return (
         <KeyboardAvoidingWrapper>
-            <View style={styles.container}>
+            <Screen style={styles.container}>
 
                 {/* Go Back Icon */}
                 <Pressable style={styles.goBackIcon} onPress={() => navigation.navigate('OAuth')}>
@@ -82,7 +83,7 @@ const SignInScreen = ({navigation}) => {
                     </Formik>
 
                     {/* Forgot Password Action */}
-                    <Pressable onPress={() => console.log("Forgot Password")}>
+                    <Pressable onPress={() => navigation.navigate('ForgotPassword')}>
                         <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
                     </Pressable>
 
@@ -121,7 +122,7 @@ const SignInScreen = ({navigation}) => {
                         <Text style={styles.signUpActionTxt}>Sign Up</Text>
                     </Pressable>
                 </View>
-            </View>
+            </Screen>
         </KeyboardAvoidingWrapper>
     )
 }

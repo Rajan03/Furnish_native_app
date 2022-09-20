@@ -1,9 +1,10 @@
 import {View, Text, Image, Pressable} from 'react-native'
+import {Screen} from "react-native-screens";
+import {FontAwesome} from "@expo/vector-icons";
 import {Formik} from "formik";
 import * as yup from "yup";
-import {FontAwesome} from "@expo/vector-icons";
 
-import {CheckBox, InputWithIcon, KeyboardAvoidingWrapper, OAuthBtn, TextBtnContained} from "../../components";
+import {InputWithIcon, KeyboardAvoidingWrapper, OAuthBtn, TextBtnContained} from "../../components";
 import {CreateAccountStyles as styles} from './Auth.styles'
 import {Logo} from '../../../constants/Images'
 
@@ -21,7 +22,7 @@ const CreateAccount = ({navigation}) => {
 
     return (
         <KeyboardAvoidingWrapper>
-            <View style={styles.container}>
+            <Screen style={styles.container}>
 
                 {/* Go Back Icon */}
                 <Pressable style={styles.goBackIcon} onPress={() => navigation.navigate('OAuth')}>
@@ -128,7 +129,7 @@ const CreateAccount = ({navigation}) => {
                         <Text style={styles.signInActionTxt}>Sign In</Text>
                     </Pressable>
                 </View>
-            </View>
+            </Screen>
         </KeyboardAvoidingWrapper>
     )
 }

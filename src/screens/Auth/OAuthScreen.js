@@ -1,4 +1,5 @@
 import {View, Text, Image, Pressable} from "react-native";
+import {Screen} from "react-native-screens";
 import {FontAwesome} from "@expo/vector-icons";
 
 import {OAuthStyles as styles} from "./Auth.styles";
@@ -7,7 +8,7 @@ import {OAuthBtn, TextBtnContained} from "../../components";
 
 const OAuthScreen = ({navigation}) => {
     return (
-        <View style={styles.container}>
+        <Screen style={styles.container}>
             {/* Illustration */}
             <View style={styles.illustration}>
                 <Image source={Login} style={styles.illustrationImage}/>
@@ -58,7 +59,7 @@ const OAuthScreen = ({navigation}) => {
                     </Pressable>
                 </View>
             </View>
-        </View>
+        </Screen>
     );
 };
 

@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {OAuthScreen, CreateAccount, SignInScreen} from "./src/screens";
+import {OAuthScreen, CreateAccount, SignInScreen, ForgotPasswordScreen} from "./src/screens";
 
 // Navigation
 import {NavigationContainer} from '@react-navigation/native';
@@ -18,6 +18,7 @@ export default function App() {
                         <Stack.Screen name="OAuth" component={OAuthScreen}/>
                         <Stack.Screen name="CreateAccount" component={CreateAccount}/>
                         <Stack.Screen name="SignIn" component={SignInScreen}/>
+                        <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen}/>
                     </Stack.Navigator>
                 </NavigationContainer>
             </SafeAreaView>
