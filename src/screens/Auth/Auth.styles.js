@@ -3,6 +3,13 @@ import {Dimensions, StyleSheet} from "react-native";
 const {height, width} = Dimensions.get("window");
 const screenHeight = height + 20;
 
+export const AuthLayoutStyles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "#fff",
+    },
+});
+
 export const OAuthStyles = StyleSheet.create({
     container: {
         flex: 1,
@@ -231,4 +238,74 @@ export const SignInWithPasswordStyles = StyleSheet.create({
     signUpActionTxt: {
         ...CreateAccountStyles.signInActionTxt,
     },
+});
+
+export const ForgotPasswordStyles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "#a98b8b",
+    },
+
+    // header
+    header: {
+      flexDirection: "row",
+        justifyContent: "flex-start",
+        alignItems: "center",
+        // marginVertical: 30,
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+    },
+
+    // illustration
+    illustrationContainer: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        // backgroundColor: "#d7b5b5",
+    },
+    // Form Container
+    form: {
+        flex: 1,
+        paddingHorizontal: 20,
+        // marginTop: 20,
+    },
+
+    // Go Back Icon
+    goBackIcon: {
+    },
+
+    // Header text
+    headerText: {
+        fontSize: 26,
+        fontWeight: "bold",
+        color: "#000",
+        marginLeft: 20,
+    },
+
+    // Illustration Image
+    illustrationImage: {
+        width: width,
+        height: height * 0.4,
+
+        resizeMode: "contain",
+    },
+    illustrationText: {
+        fontSize: 20,
+        fontWeight: "light",
+        color: "#000",
+        paddingHorizontal: 20,
+        textAlign: "center",
+    },
+
+    // Form Components
+    signUpBtn: {
+      marginTop: 20,
+    },
+    instructions: {
+        fontSize: 16,
+        fontWeight: "light",
+        color: "#8f8f8f",
+        marginTop: "auto",
+        marginBottom: 30,
+    }
 });
