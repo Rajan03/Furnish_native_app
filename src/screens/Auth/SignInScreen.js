@@ -5,7 +5,6 @@ import {Formik} from "formik";
 import * as yup from "yup";
 
 import {CheckBox, InputWithIcon, KeyboardAvoidingWrapper, OAuthBtn, TextBtnContained} from "../../components";
-import {SignInWithPasswordStyles as styles} from './Auth.styles'
 import {Logo} from '../../../constants/Images'
 
 // Validation Schema for Signup Form
@@ -18,20 +17,20 @@ const SignInScreen = ({navigation}) => {
 
     return (
         <KeyboardAvoidingWrapper>
-            <Screen style={styles.container}>
+            <Screen>
 
                 {/* Go Back Icon */}
-                <Pressable style={styles.goBackIcon} onPress={() => navigation.navigate('OAuth')}>
+                <Pressable onPress={() => navigation.navigate('OAuth')}>
                     <FontAwesome name="chevron-left" size={24} color="black"/>
                 </Pressable>
 
                 {/* Logo */}
-                <Image source={Logo} style={styles.logoImage}/>
+                <Image source={Logo}/>
 
                 {/* Create Account Form */}
-                <View style={styles.form}>
+                <View>
                     {/* Title */}
-                    <Text style={styles.createText}>Login to Your Account</Text>
+                    <Text>Login to Your Account</Text>
 
                     <Formik initialValues={{email: '', password: '', rememberMe: false}}
                             validationSchema={validationSchema}
@@ -48,14 +47,14 @@ const SignInScreen = ({navigation}) => {
                           }) => (
                             <>
                                 {/* Email */}
-                                <View style={styles.inputContainer}>
+                                <View>
                                     <InputWithIcon icon={"envelope"} placeholder="Email" value={values.email}
                                                    error={(touched.email && errors.email) ? errors.email : ''}
                                                    onBlur={handleBlur('email')} onChangeText={handleChange('email')}/>
                                 </View>
 
                                 {/* Password */}
-                                <View style={styles.inputContainer}>
+                                <View>
                                     <InputWithIcon icon={"lock"} placeholder="Password" value={values.password}
                                                    textContentType={"password"} secureTextEntry={true}
                                                    error={(touched.password && errors.password) ? errors.password : ''}
@@ -65,14 +64,14 @@ const SignInScreen = ({navigation}) => {
 
                                 {/* Remember Me Checkbox */}
                                 <Pressable onPress={() => setFieldValue('rememberMe', !values.rememberMe)}
-                                           style={styles.rememberMeContainer}>
+                                >
                                     <CheckBox checked={values.rememberMe}
                                               onChange={(check) => setFieldValue('rememberMe', check)}/>
-                                    <Text style={styles.rememberMeText}>Remember Me</Text>
+                                    <Text>Remember Me</Text>
                                 </Pressable>
 
                                 {/* Sign Up Btn */}
-                                <View style={styles.signUpBtn}>
+                                <View>
                                     <TextBtnContained
                                         btnText="Sign In"
                                         onPressCallback={handleSubmit}
@@ -84,20 +83,20 @@ const SignInScreen = ({navigation}) => {
 
                     {/* Forgot Password Action */}
                     <Pressable onPress={() => navigation.navigate('ForgotPassword')}>
-                        <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+                        <Text>Forgot Password?</Text>
                     </Pressable>
 
                     {/* Or Separator */}
-                    <View style={styles.orSeparator}>
-                        <View style={styles.orSeparatorLine}></View>
-                        <Text style={styles.orSeparatorText}>or continue with</Text>
-                        <View style={styles.orSeparatorLine}></View>
+                    <View>
+                        <View></View>
+                        <Text>or continue with</Text>
+                        <View></View>
                     </View>
 
                 </View>
 
                 {/* Social Login Buttons */}
-                <View style={styles.socialLoginBtn}>
+                <View>
                     {/* OAuth Buttons */}
                     <OAuthBtn
                         btnIcon={<FontAwesome name="google" size={24} color="gray"/>}
@@ -116,10 +115,10 @@ const SignInScreen = ({navigation}) => {
                 </View>
 
                 {/* Sign Up redirection text with signInText Styles */}
-                <View style={styles.signUpAction}>
-                    <Text style={styles.signUpText}>Don't have an account? {"  "}</Text>
+                <View>
+                    <Text>Don't have an account? {"  "}</Text>
                     <Pressable onPress={() => navigation.navigate("CreateAccount")}>
-                        <Text style={styles.signUpActionTxt}>Sign Up</Text>
+                        <Text>Sign Up</Text>
                     </Pressable>
                 </View>
             </Screen>

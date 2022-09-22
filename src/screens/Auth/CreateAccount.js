@@ -5,7 +5,6 @@ import {Formik} from "formik";
 import * as yup from "yup";
 
 import {InputWithIcon, KeyboardAvoidingWrapper, OAuthBtn, TextBtnContained} from "../../components";
-import {CreateAccountStyles as styles} from './Auth.styles'
 import {Logo} from '../../../constants/Images'
 
 // Validation Schema for Signup Form
@@ -22,21 +21,21 @@ const CreateAccount = ({navigation}) => {
 
     return (
         <KeyboardAvoidingWrapper>
-            <Screen style={styles.container}>
+            <Screen>
 
                 {/* Go Back Icon */}
-                <Pressable style={styles.goBackIcon} onPress={() => navigation.navigate('OAuth')}>
+                <Pressable onPress={() => navigation.navigate('OAuth')}>
                     <FontAwesome name="chevron-left" size={24} color="black"/>
                 </Pressable>
 
                 {/* Logo */}
-                <Image source={Logo} style={styles.logoImage}/>
+                <Image source={Logo}/>
 
                 {/* Title */}
-                <Text style={styles.createText}>Create Account</Text>
+                <Text>Create Account</Text>
 
                 {/* Create Account Form */}
-                <View style={styles.form}>
+                <View>
                     <Formik initialValues={{name: '', email: '', password: '', confirmPassword: '', rememberMe: false}}
                             validationSchema={validationSchema}
                             onSubmit={(values) => console.log(values)}>
@@ -52,21 +51,21 @@ const CreateAccount = ({navigation}) => {
                           }) => (
                             <>
                                 {/* Name */}
-                                <View style={styles.inputContainer}>
+                                <View>
                                     <InputWithIcon icon={"user"} placeholder="Name" value={values.name}
                                                    error={(touched.name && errors.name) ? errors.name : ''}
                                                    onBlur={handleBlur('name')} onChangeText={handleChange('name')}/>
                                 </View>
 
                                 {/* Email */}
-                                <View style={styles.inputContainer}>
+                                <View>
                                     <InputWithIcon icon={"envelope"} placeholder="Email" value={values.email}
                                                    error={(touched.email && errors.email) ? errors.email : ''}
                                                    onBlur={handleBlur('email')} onChangeText={handleChange('email')}/>
                                 </View>
 
                                 {/* Password */}
-                                <View style={styles.inputContainer}>
+                                <View>
                                     <InputWithIcon icon={"lock"} placeholder="Password" value={values.password}
                                                    textContentType={"password"} secureTextEntry={true}
                                                    error={(touched.password && errors.password) ? errors.password : ''}
@@ -75,7 +74,7 @@ const CreateAccount = ({navigation}) => {
                                 </View>
 
                                 {/* Confirm Password */}
-                                <View style={styles.inputContainer}>
+                                <View>
                                     <InputWithIcon icon={"lock"} placeholder="Confirm Password"
                                                    value={values.confirmPassword}
                                                    textContentType={"password"} secureTextEntry={true}
@@ -85,7 +84,7 @@ const CreateAccount = ({navigation}) => {
                                 </View>
 
                                 {/* Sign Up Btn */}
-                                <View style={styles.signUpBtn}>
+                                <View>
                                     <TextBtnContained
                                         btnText="Sign Up"
                                         onPressCallback={handleSubmit}
@@ -96,14 +95,14 @@ const CreateAccount = ({navigation}) => {
                     </Formik>
 
                     {/* Or Separator */}
-                    <View style={styles.orSeparator}>
-                        <View style={styles.orSeparatorLine}></View>
-                        <Text style={styles.orSeparatorText}>or continue with</Text>
-                        <View style={styles.orSeparatorLine}></View>
+                    <View>
+                        <View></View>
+                        <Text>or continue with</Text>
+                        <View></View>
                     </View>
 
                     {/* Social Login Buttons */}
-                    <View style={styles.socialLoginBtn}>
+                    <View>
                         {/* OAuth Buttons */}
                         <OAuthBtn
                             btnIcon={<FontAwesome name="google" size={24} color="gray"/>}
@@ -123,10 +122,10 @@ const CreateAccount = ({navigation}) => {
                 </View>
 
                 {/* Sign In redirection text */}
-                <View style={styles.signInAction}>
-                    <Text style={styles.signInText}>Already have an account? {"  "}</Text>
+                <View>
+                    <Text>Already have an account? {"  "}</Text>
                     <Pressable onPress={() => navigation.navigate('SignIn')}>
-                        <Text style={styles.signInActionTxt}>Sign In</Text>
+                        <Text>Sign In</Text>
                     </Pressable>
                 </View>
             </Screen>

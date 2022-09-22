@@ -5,7 +5,6 @@ import {Formik} from "formik";
 import {FontAwesome} from "@expo/vector-icons";
 
 import {InputWithIcon, TextBtnContained} from "../../components";
-import {ForgotPasswordStyles as styles} from './Auth.styles'
 import AuthLayout from "./Auth.Layout";
 import {ForgotPassword} from "../../../constants/Images";
 
@@ -28,25 +27,25 @@ const ForgotPasswordScreen = ({navigation}) => {
     return (
         <AuthLayout>
             {/* Header and Back btn*/}
-            <View style={styles.header}>
+            <View>
                 {/* Back Icon */}
-                <Pressable style={styles.goBackIcon} onPress={() => navigation.navigate('SignIn')}>
+                <Pressable onPress={() => navigation.navigate('SignIn')}>
                     <FontAwesome name="chevron-left" size={24} color="black"/>
                 </Pressable>
 
                 {/* Header Text */}
-                <Text style={styles.headerText}>Forgot Password</Text>
+                <Text>Forgot Password</Text>
             </View>
 
             {/* Illustration */}
-            <View style={styles.illustrationContainer}>
-                <Image source={ForgotPassword} style={styles.illustrationImage}/>
+            <View>
+                <Image source={ForgotPassword}/>
 
-                <Text style={styles.illustrationText}>Enter your email address to reset your password</Text>
+                <Text>Enter your email address to reset your password</Text>
             </View>
 
             {/* Forgot Password Form */}
-            <View style={styles.form}>
+            <View>
                 <Formik initialValues={{email: ''}}
                         onSubmit={handleResetPassword}
                         validationSchema={validationSchema}>
@@ -66,7 +65,7 @@ const ForgotPasswordScreen = ({navigation}) => {
                                 />
                             </View>
                             {/* Reset Password Btn */}
-                            <View style={styles.signUpBtn}>
+                            <View>
                                 <TextBtnContained
                                     btnText="Reset Password"
                                     onPressCallback={handleSubmit}
@@ -76,7 +75,7 @@ const ForgotPasswordScreen = ({navigation}) => {
                     )}
                 </Formik>
 
-                <Text style={styles.instructions}>
+                <Text>
                     Please provide a valid email as we will send you an email with an OTP that you can use to reset your password
                 </Text>
             </View>

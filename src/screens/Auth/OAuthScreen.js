@@ -2,24 +2,32 @@ import {View, Text, Image, Pressable} from "react-native";
 import {Screen} from "react-native-screens";
 import {FontAwesome} from "@expo/vector-icons";
 
-import {OAuthStyles as styles} from "./Auth.styles";
 import {Login} from "../../../constants/Images";
 import {OAuthBtn, TextBtnContained} from "../../components";
+import {
+    ActionsContainer,
+    HeaderText,
+    ImageContainer,
+    ImageStyles, OrSeparator,
+    OrSeparatorLine, RedirectText,
+    ScreenContainer
+} from "./Auth.styles";
 
 const OAuthScreen = ({navigation}) => {
     return (
-        <Screen style={styles.container}>
+        <Screen style={ScreenContainer}>
             {/* Illustration */}
-            <View style={styles.illustration}>
-                <Image source={Login} style={styles.illustrationImage}/>
-            </View>
+            <ImageContainer>
+                <ImageStyles resizeMode={"contain"} source={Login}/>
+            </ImageContainer>
 
-            <View style={styles.textAndActions}>
+            <ActionsContainer>
+
                 {/* Title */}
-                <Text style={styles.loginText}>Let's you in</Text>
+                <HeaderText>Let's you in</HeaderText>
 
                 {/* OAuth Buttons */}
-                <View style={styles.oAuthBtn}>
+                <View>
                     <OAuthBtn
                         btnIcon={<FontAwesome name="google" size={24} color="gray"/>}
                         btnText="Continue with Google"
@@ -37,14 +45,14 @@ const OAuthScreen = ({navigation}) => {
                 </View>
 
                 {/* Or Separator */}
-                <View style={styles.orSeparator}>
-                    <View style={styles.orSeparatorLine}></View>
-                    <Text style={styles.orSeparatorText}>OR</Text>
-                    <View style={styles.orSeparatorLine}></View>
-                </View>
+                <OrSeparator>
+                    <OrSeparatorLine></OrSeparatorLine>
+                    <Text>OR</Text>
+                    <OrSeparatorLine></OrSeparatorLine>
+                </OrSeparator>
 
                 {/* Sign In With Password btn */}
-                <View style={styles.signInWithPasswordBtn}>
+                <View>
                     <TextBtnContained
                         btnText="Sign In With Password"
                         onPressCallback={() => navigation.navigate("SignIn")}
@@ -52,13 +60,13 @@ const OAuthScreen = ({navigation}) => {
                 </View>
 
                 {/* Sign Up redirection text */}
-                <View style={styles.signUpAction}>
-                    <Text style={styles.signUpText}>Don't have an account? {"  "}</Text>
+                <RedirectText>
+                    <Text>Don't have an account? {"  "}</Text>
                     <Pressable onPress={() => navigation.navigate("CreateAccount")}>
-                        <Text style={styles.signUpActionTxt}>Sign Up</Text>
+                        <Text>Sign Up</Text>
                     </Pressable>
-                </View>
-            </View>
+                </RedirectText>
+            </ActionsContainer>
         </Screen>
     );
 };
