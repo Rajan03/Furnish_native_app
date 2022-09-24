@@ -1,13 +1,13 @@
-import {StyleSheet, Text, View, TouchableHighlight} from "react-native";
+import {StyleSheet, Text, TouchableHighlight, View} from "react-native";
 
-const OAuthBtn = ({btnText, btnIcon, onPressCallback, onlyIcons}) => {
+const OAuthBtn = ({btnText, btnIcon, onPressCallback, onlyIcons, styles: extraStyles}) => {
     return (
         <>
             {/* OAuth Btn with Icon */}
             <TouchableHighlight
                 activeOpacity={1}
                 underlayColor="#f1f1f1"
-                style={styles.btnContainer}
+                style={[styles.btnContainer, extraStyles]}
                 onPress={onPressCallback}
             >
                 <>
@@ -27,11 +27,10 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#fff",
-        height: 50,
+        height:50,
         borderRadius: 10,
         borderWidth: 1,
         borderColor: "lightgray",
-        marginTop: 20,
     },
     btnIcon: {
         width: 50,
@@ -40,7 +39,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     btnText: {
-        fontSize: 20,
+        fontSize: 16,
         fontWeight: "bold",
         color: "grey",
     },

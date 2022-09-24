@@ -1,16 +1,13 @@
-import {Dimensions, Platform, PixelRatio} from "react-native";
+import {Dimensions} from "react-native";
+import {heightPercentageToDP as hp, widthPercentageToDP as wp} from "react-native-responsive-screen";
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
-const scale = SCREEN_WIDTH / 320;
-
 export {SCREEN_WIDTH, SCREEN_HEIGHT};
 
-export const normalize = (size) => {
-    const newSize = size * scale;
-    if (Platform.OS === 'ios') {
-        return Math.round(PixelRatio.roundToNearestPixel(newSize));
-    } else {
-        return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2;
-    }
+export const normalizeHeight = (size) => {
+   return hp(`${size}%`);
+};
+export const normalizeWidth = (size) => {
+   return wp(`${size}%`);
 };

@@ -1,3 +1,3 @@
-import {normalize, SCREEN_WIDTH, SCREEN_HEIGHT} from './helpers';
+import {normalizeHeight, SCREEN_WIDTH, SCREEN_HEIGHT} from './helpers';
 
-export {normalize, SCREEN_WIDTH, SCREEN_HEIGHT};
+export {normalizeHeight, SCREEN_WIDTH, SCREEN_HEIGHT};

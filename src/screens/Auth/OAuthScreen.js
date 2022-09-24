@@ -9,7 +9,7 @@ import {
     HeaderText,
     ImageContainer,
     ImageStyles, OrSeparator,
-    OrSeparatorLine, RedirectText,
+    OrSeparatorLine, OrSeparatorText, RedirectText,
     ScreenContainer
 } from "./Auth.styles";
 
@@ -31,12 +31,13 @@ const OAuthScreen = ({navigation}) => {
                     <OAuthBtn
                         btnIcon={<FontAwesome name="google" size={24} color="gray"/>}
                         btnText="Continue with Google"
+                        styles={{marginVertical: 20}}
                         onPressCallback={() => {
                             console.log("Google");
                         }}
                     />
                     <OAuthBtn
-                        btnIcon={<FontAwesome name="facebook" size={24} color="gray"/>}
+                        btnIcon={<FontAwesome name="facebook-square" size={24} color="gray"/>}
                         btnText="Continue with Facebook"
                         onPressCallback={() => {
                             console.log("Facebook");
@@ -47,7 +48,7 @@ const OAuthScreen = ({navigation}) => {
                 {/* Or Separator */}
                 <OrSeparator>
                     <OrSeparatorLine></OrSeparatorLine>
-                    <Text>OR</Text>
+                    <OrSeparatorText>OR</OrSeparatorText>
                     <OrSeparatorLine></OrSeparatorLine>
                 </OrSeparator>
 

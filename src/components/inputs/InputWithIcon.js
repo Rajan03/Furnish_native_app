@@ -1,9 +1,9 @@
 import {StyleSheet, Text, TextInput, View} from "react-native";
 import {FontAwesome, Ionicons} from "@expo/vector-icons";
 
-const InputWithIcon = ({icon, error, ...props}) => {
+const InputWithIcon = ({icon, error, style: extraStyle, ...props}) => {
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, extraStyle]}>
             <View style={[styles.inputContainer, error ? styles.inputErrorContainer : null]}>
                 {/* Dark icon if no error else red */}
                 <FontAwesome name={icon} size={24} style={[styles.darkIcon, error ? styles.errorIcon : null]}/>
