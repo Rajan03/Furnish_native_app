@@ -1,12 +1,20 @@
 import {useState} from "react";
-import {View, Pressable, Text, Image} from "react-native";
 import * as Yup from "yup";
-import {Formik} from "formik";
 import {FontAwesome} from "@expo/vector-icons";
 
-import {InputWithIcon, TextBtnContained} from "../../components";
-import AuthLayout from "./Auth.Layout";
 import {ForgotPassword} from "../../../constants/Images";
+import {FormikForm, InputWithIcon, TextBtnContained} from "../../components";
+import AuthLayout from "./Auth.Layout";
+import {
+    BackBtn,
+    FooterMsgText,
+    FormHeaderText,
+    ForgotPasswordStyleSheet as styles,
+    ForgotPswFooter,
+    FormGroup,
+    ImageContainer,
+    ImageStyles
+} from "./Auth.styles";
 
 // Validation Schema for Forgot Password Form
 const validationSchema = Yup.object().shape({
@@ -21,64 +29,55 @@ const ForgotPasswordScreen = ({navigation}) => {
 
         setTimeout(() => {
             setLoading(false);
-        }, 2000);
+            navigation.navigate('OtpScreen');
+        }, 8000);
     }
 
     return (
-        <AuthLayout>
-            {/* Header and Back btn*/}
-            <View>
-                {/* Back Icon */}
-                <Pressable onPress={() => navigation.navigate('SignIn')}>
-                    <FontAwesome name="chevron-left" size={24} color="black"/>
-                </Pressable>
-
-                {/* Header Text */}
-                <Text>Forgot Password</Text>
-            </View>
+        <AuthLayout withKeyboardAvoidance>
+            {/* Go Back Icon */}
+            <BackBtn onPress={() => navigation.goBack()}>
+                <FontAwesome name="chevron-left" size={24} color="black"/>
+            </BackBtn>
 
             {/* Illustration */}
-            <View>
-                <Image source={ForgotPassword}/>
-
-                <Text>Enter your email address to reset your password</Text>
-            </View>
+            <ImageContainer>
+                <ImageStyles resizeMode={"contain"} source={ForgotPassword}/>
+            </ImageContainer>
 
             {/* Forgot Password Form */}
-            <View>
-                <Formik initialValues={{email: ''}}
+            <FormikForm initialState={{email: ''}}
                         onSubmit={handleResetPassword}
                         validationSchema={validationSchema}>
-                    {({
-                          handleChange, handleSubmit, errors,
-                          setFieldTouched, values, touched
-                      }) => (
-                        <>
-                            <View>
-                                <InputWithIcon
-                                    icon={"envelope"}
-                                    placeholder="Email"
-                                    value={values.email}
-                                    error={(touched.email && errors.email) ? errors.email : ''}
-                                    onBlur={() => setFieldTouched('email')}
-                                    onChangeText={handleChange('email')}
-                                />
-                            </View>
-                            {/* Reset Password Btn */}
-                            <View>
-                                <TextBtnContained
-                                    btnText="Reset Password"
-                                    onPressCallback={handleSubmit}
-                                />
-                            </View>
-                        </>
-                    )}
-                </Formik>
+                {({handleChange, handleSubmit, errors, setFieldTouched, values, touched}) => (
+                    <FormGroup>
+                        <FormHeaderText>Enter your email address to reset your
+                            password</FormHeaderText>
 
-                <Text>
-                    Please provide a valid email as we will send you an email with an OTP that you can use to reset your password
-                </Text>
-            </View>
+                        <InputWithIcon
+                            icon={"envelope"}
+                            placeholder="Email"
+                            style={styles.input}
+                            value={values.email}
+                            editable={!loading}
+                            error={(touched.email && errors.email) ? errors.email : ''}
+                            onBlur={() => setFieldTouched('email')}
+                            onChangeText={handleChange('email')}
+                        />
+
+                        {/* Reset Password Btn */}
+                        <TextBtnContained disabled={loading} btnText="Reset Password"
+                                          onPressCallback={() => navigation.navigate('OtpScreen')}/>
+                    </FormGroup>
+                )}
+            </FormikForm>
+
+            <ForgotPswFooter>
+                <FooterMsgText>
+                    Please provide a valid email as we will send you an email with an OTP that you can use to reset your
+                    password
+                </FooterMsgText>
+            </ForgotPswFooter>
         </AuthLayout>
     );
 }

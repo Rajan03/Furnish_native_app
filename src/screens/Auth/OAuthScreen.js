@@ -1,74 +1,73 @@
-import {View, Text, Image, Pressable} from "react-native";
-import {Screen} from "react-native-screens";
+import {Pressable, Text} from "react-native";
 import {FontAwesome} from "@expo/vector-icons";
 
 import {Login} from "../../../constants/Images";
 import {OAuthBtn, TextBtnContained} from "../../components";
+import AuthLayout from "./Auth.Layout";
 import {
     ActionsContainer,
     HeaderText,
     ImageContainer,
-    ImageStyles, OrSeparator,
-    OrSeparatorLine, OrSeparatorText, RedirectText,
-    ScreenContainer
+    ImageStyles,
+    OAuthActions,
+    OAuthStyleSheet as styles,
+    OrSeparator,
+    OrSeparatorLine,
+    OrSeparatorText,
+    RedirectText,
 } from "./Auth.styles";
 
 const OAuthScreen = ({navigation}) => {
     return (
-        <Screen style={ScreenContainer}>
-            {/* Illustration */}
-            <ImageContainer>
-                <ImageStyles resizeMode={"contain"} source={Login}/>
-            </ImageContainer>
+        <>
+            <AuthLayout>
+                {/* Illustration */}
+                <ImageContainer>
+                    <ImageStyles resizeMode={"contain"} source={Login}/>
+                </ImageContainer>
 
-            <ActionsContainer>
+                <ActionsContainer>
+                    {/* Title */}
+                    <HeaderText>Let's you in</HeaderText>
 
-                {/* Title */}
-                <HeaderText>Let's you in</HeaderText>
+                    {/* OAuth Buttons */}
+                    <OAuthActions>
+                        <OAuthBtn
+                            btnIcon={<FontAwesome name="google" size={24} color="gray"/>}
+                            btnText="Continue with Google"
+                            styles={{marginBottom: 25}}
+                            onPressCallback={() => console.log("Google")}
+                        />
+                        <OAuthBtn
+                            btnIcon={<FontAwesome name="facebook-square" size={24} color="gray"/>}
+                            btnText="Continue with Facebook"
+                            onPressCallback={() => console.log("Facebook")}
+                        />
+                    </OAuthActions>
 
-                {/* OAuth Buttons */}
-                <View>
-                    <OAuthBtn
-                        btnIcon={<FontAwesome name="google" size={24} color="gray"/>}
-                        btnText="Continue with Google"
-                        styles={{marginVertical: 20}}
-                        onPressCallback={() => {
-                            console.log("Google");
-                        }}
-                    />
-                    <OAuthBtn
-                        btnIcon={<FontAwesome name="facebook-square" size={24} color="gray"/>}
-                        btnText="Continue with Facebook"
-                        onPressCallback={() => {
-                            console.log("Facebook");
-                        }}
-                    />
-                </View>
+                    {/* Or Separator */}
+                    <OrSeparator>
+                        <OrSeparatorLine></OrSeparatorLine>
+                        <OrSeparatorText>OR</OrSeparatorText>
+                        <OrSeparatorLine></OrSeparatorLine>
+                    </OrSeparator>
 
-                {/* Or Separator */}
-                <OrSeparator>
-                    <OrSeparatorLine></OrSeparatorLine>
-                    <OrSeparatorText>OR</OrSeparatorText>
-                    <OrSeparatorLine></OrSeparatorLine>
-                </OrSeparator>
-
-                {/* Sign In With Password btn */}
-                <View>
+                    {/* Sign In With Password btn */}
                     <TextBtnContained
+                        styles={{marginBottom: 20}}
                         btnText="Sign In With Password"
-                        onPressCallback={() => navigation.navigate("SignIn")}
-                    />
-                </View>
+                        onPressCallback={() => navigation.navigate("SignIn")}/>
 
-                {/* Sign Up redirection text */}
-                <RedirectText>
-                    <Text>Don't have an account? {"  "}</Text>
-                    <Pressable onPress={() => navigation.navigate("CreateAccount")}>
-                        <Text>Sign Up</Text>
-                    </Pressable>
-                </RedirectText>
-            </ActionsContainer>
-        </Screen>
+                    {/* Sign Up redirection text */}
+                    <RedirectText>
+                        <Text>Don't have an account? {"  "}</Text>
+                        <Pressable onPress={() => navigation.navigate("CreateAccount")}>
+                            <Text style={styles.redirectText}>Sign Up</Text>
+                        </Pressable>
+                    </RedirectText>
+                </ActionsContainer>
+            </AuthLayout>
+        </>
     );
 };
 

@@ -1,42 +1,123 @@
 import {StyleSheet} from "react-native";
 import styled from "styled-components/native";
-import {heightPercentageToDP as hp} from "react-native-responsive-screen";
-import {normalizeHeight} from "../../../utils";
+import {hp, normalize, wp} from "../../../utils";
 
-export const ScreenContainer = {
-    flex: 1,
-    backgroundColor: "#ffffff",
+export const ScrollContainer = {
+    minHeight: '100%',
+    backgroundColor: "#fff",
+    flexDirection: 'column',
 }
 
-//#region OAUTH SCREEN STYLES
-export const ImageContainer = styled.View`
+//#region COMMON STYLES
+export const OrSeparator = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+`;
+export const OrSeparatorLine = styled.View`
   flex: 1;
+  height: 1px;
+  background-color: #acada1;
+`;
+export const OrSeparatorText = styled.Text`
+  font-size: 16px;
+  font-weight: 600;
+  color: #acada1;
+  margin: 0 10px;
+`;
+
+// Header
+export const BackBtn = styled.Pressable`
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: auto;
+  padding: 5px;
+`;
+export const LogoStyles = styled.Image`
+  height: ${hp(20)}px;
+  width: ${wp(100)}px;
+  margin-top: 20px;
+  align-self: center;
+`;
+export const FormHeaderText = styled.Text`
+  font-size: ${normalize(18)}px;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 30px;
+`;
+
+// Image/Illustration
+export const ImageContainer = styled.View`
+  height: ${hp(40)}px;
+  width: ${wp(100)}px;
+  margin-top: 10px;
   justify-content: center;
   align-items: center;
 `;
 export const ImageStyles = styled.Image`
   flex: 1;
 `;
+
+// Same styles extended to SignIn and SignUp screens
+export const HeaderText = styled.Text`
+  font-size: ${normalize(34)}px;
+  font-weight: 600;
+  text-align: center;
+`;
+export const RedirectText = styled.View`
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+`;
+
+export const FormGroup = styled.View`
+  padding: 20px;
+`;
+
+// Footer
+export const FormFooter = styled.View`
+  padding: 20px;
+  margin-top: auto;
+  min-height: 200px;
+  justify-content: flex-end;
+`;
+export const OAuthBtnActions = styled.View`
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+//#endregion COMMON STYLES
+
+//#region OAUTH SCREEN STYLES
+export const OAuthStyleSheet = StyleSheet.create({
+    redirectText: {
+        fontWeight: "bold",
+    }
+});
 export const ActionsContainer = styled.View`
   flex: 1;
   padding: 20px;
-  justify-content: space-evenly;
 `;
-export const HeaderText = styled.Text`
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
+export const OAuthActions = styled.View`
+  padding: 25px 0;
+  margin-bottom: 30px;
 `;
 //#endregion OAUTH SCREEN STYLES
 
 //#region SIGN IN SCREEN STYLES
 export const SignInStyleSheet = StyleSheet.create({
+    screenContainer: {
+        flex: 1,
+    },
     checkboxContainer: {
+        marginRight: 'auto',
         flexDirection: "row",
         alignItems: "center",
-        marginTop: normalizeHeight(3),
     },
     checkboxLabel: {
+        alignSelf: "flex-start",
         marginLeft: 8,
     },
     signInBtn: {
@@ -49,65 +130,62 @@ export const SignInStyleSheet = StyleSheet.create({
         fontWeight: "bold",
     },
     input: {
-        marginVertical: normalizeHeight(2),
+        marginBottom: 10,
     }
 });
-export const SignInContainer = {
-    flex: 1,
-    flexDirection: "column",
-}
-export const SignInLogoContainer = styled.View`
-  justify-content: flex-start;
+
+// Sign In Form
+export const SignInHeaderText = styled(HeaderText)`
+  font-size: ${normalize(24)}px;
+  margin-bottom: 30px;
 `;
-export const LogoStyles = styled.Image`
-  align-self: center;
-  height: ${hp("20%")}px;
-`;
-export const BackBtn = styled.Pressable`
-  padding: ${normalizeHeight(1.5)}px;
-  margin-left: ${normalizeHeight(1)}px;
-`;
-export const SignInFormGroup = styled.View`
-  flex: 1;
-  padding: 0 20px;
-`;
-export const SignInFormContainer = styled.View``;
-export const SignInHeaderText = styled.Text`
-  font-size: ${normalizeHeight(3.5)}px;
-  font-weight: 600;
-  text-align: center;
-  margin: ${normalizeHeight(3)}px 0;
-`;
-export const OAuthBtnActions = styled.View`
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+export const SignInFormAction = styled.View`
+  margin-top: 20px;
+  flex-direction: column;
 `;
 //#endregion SIGN IN SCREEN STYLES
 
-//#region COMMON STYLES
-export const OrSeparator = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: ${normalizeHeight(2)}px 0;
+//#region SIGN UP SCREEN STYLES
+export const SignUpStyleSheet = StyleSheet.create({
+    redirectText: {
+        fontWeight: "bold",
+    },
+    input: {
+        marginBottom: 10,
+    }
+});
+export const SignUpHeaderText = styled(HeaderText)`
+  font-size: ${normalize(24)}px;
+  margin-bottom: 30px;
 `;
-export const OrSeparatorLine = styled.View`
-  flex: 1;
-  height: 1px;
-  background-color: #acada1;
-`;
-export const OrSeparatorText = styled.Text`
-  font-size: 16px;
-  font-weight: 600;
-  color: #acada1;
-  margin: 0 ${normalizeHeight(1)}px;
+//#endregion SIGN UP SCREEN STYLES
+
+//#region FORGOT PASSWORD SCREEN STYLES
+export const ForgotPasswordStyleSheet = StyleSheet.create({
+    redirectText: {
+        fontWeight: "bold",
+    },
+    input: {
+        marginBottom: 15,
+    }
+});
+
+export const ForgotPswFooter = styled(FormFooter)`
+  min-height: 100px;
 `;
 
-export const RedirectText = styled.View`
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: ${normalizeHeight(3)}px 0;
+export const FooterMsgText = styled.Text`
+  font-size: ${normalize(14)}px;
+  font-weight: 300;
+  color: #aaab9c;
 `;
-//#endregion COMMON STYLES
+//#endregion FORGOT PASSWORD SCREEN STYLES
+
+//#region OTP SCREEN STYLES
+export const OTPStyleSheet = StyleSheet.create({
+    redirectText: {
+        fontWeight: "bold",
+    }
+});
+//#endregion OTP SCREEN STYLES
+

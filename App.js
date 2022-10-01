@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {OAuthScreen, CreateAccount, SignInScreen, ForgotPasswordScreen} from "./src/screens";
+import {OAuthScreen, CreateAccount, SignInScreen, ForgotPasswordScreen, OtpVerification} from "./src/screens";
 
 // Navigation
 import {NavigationContainer} from '@react-navigation/native';
@@ -19,6 +19,7 @@ export default function App() {
                         <Stack.Screen name="CreateAccount" component={CreateAccount}/>
                         <Stack.Screen name="SignIn" component={SignInScreen}/>
                         <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen}/>
+                        <Stack.Screen name="OtpScreen" component={OtpVerification}/>
                     </Stack.Navigator>
                 </NavigationContainer>
             </SafeAreaView>
@@ -29,6 +30,5 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fff",
     },
 });

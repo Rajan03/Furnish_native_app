@@ -36,12 +36,12 @@ const styles = StyleSheet.create({
         borderWidth: 1,
     },
     inputErrorContainer: {
-        borderColor: "#ea4646",
+        borderColor: "#c53838",
         borderWidth: 1,
         backgroundColor: "#faeded",
     },
     errorIcon: {
-        color: '#ea4646'
+        color: '#c53838'
     },
     darkIcon: {
         width: 20,

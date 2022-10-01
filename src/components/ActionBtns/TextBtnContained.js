@@ -1,13 +1,15 @@
 import {StyleSheet, Text, TouchableHighlight} from "react-native";
 
-const ActionBtn = ({btnText, onPressCallback, styles: extraStyles}) => {
+const ActionBtn = (props) => {
+    const {btnText, onPressCallback, styles: extraStyles} = props;
+
     return (
         <TouchableHighlight
             activeOpacity={1}
             underlayColor="#333"
-            style={[styles.btnBox, extraStyles]}
+            style={[styles.btnBox, props.disabled ? styles.disabledBtnBox : null, extraStyles]}
             onPress={onPressCallback}
-        >
+            {...props}>
             <Text style={styles.btnText}>{btnText}</Text>
         </TouchableHighlight>
     );
@@ -32,6 +34,10 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
+    },
+
+    disabledBtnBox: {
+        backgroundColor: "#4b4b4b",
     },
     // Btn Text
     btnText: {
