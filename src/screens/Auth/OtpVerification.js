@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {FontAwesome} from "@expo/vector-icons";
 
-import {OTP} from "../../../constants/Images";
-import AuthLayout from "./Auth.Layout";
-import {OtpInput, TextBtnContained} from "../../components";
-import {BackBtn, FormGroup, FormHeaderText, ImageContainer, ImageStyles, OTPStyleSheet as styles} from "./Auth.styles";
+import {OTP} from "constants/Images";
+import {ScrollableLayout} from "container";
+import {OtpInput, TextBtnContained} from "components";
+import {BackBtn, FormGroup, FormHeaderText, ImageContainer, ImageStyles} from "./Auth.styles";
 
 const OtpVerification = ({navigation}) => {
     const [otp, setOtp] = useState('');
@@ -17,7 +17,7 @@ const OtpVerification = ({navigation}) => {
         setOtpError('');
     }
     return (
-        <AuthLayout withKeyboardAvoidance>
+        <ScrollableLayout withKeyboardAvoidance>
             {/* Go Back Icon */}
             <BackBtn onPress={() => navigation.navigate('ForgotPassword')}>
                 <FontAwesome name="chevron-left" size={24} color="black"/>
@@ -39,7 +39,7 @@ const OtpVerification = ({navigation}) => {
                 <TextBtnContained btnText="Verify"
                                   onPressCallback={() => console.log('Done')}/>
             </FormGroup>
-        </AuthLayout>
+        </ScrollableLayout>
     );
 };
 

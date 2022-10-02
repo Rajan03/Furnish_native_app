@@ -1,9 +1,9 @@
 import {Pressable, Text} from "react-native";
 import {FontAwesome} from "@expo/vector-icons";
 
-import {Login} from "../../../constants/Images";
-import {OAuthBtn, TextBtnContained} from "../../components";
-import AuthLayout from "./Auth.Layout";
+import {Login} from "constants/Images";
+import {OAuthBtn, TextBtnContained} from "components";
+import {ScrollableLayout} from "container";
 import {
     ActionsContainer,
     HeaderText,
@@ -20,7 +20,7 @@ import {
 const OAuthScreen = ({navigation}) => {
     return (
         <>
-            <AuthLayout>
+            <ScrollableLayout>
                 {/* Illustration */}
                 <ImageContainer>
                     <ImageStyles resizeMode={"contain"} source={Login}/>
@@ -66,7 +66,7 @@ const OAuthScreen = ({navigation}) => {
                         </Pressable>
                     </RedirectText>
                 </ActionsContainer>
-            </AuthLayout>
+            </ScrollableLayout>
         </>
     );
 };

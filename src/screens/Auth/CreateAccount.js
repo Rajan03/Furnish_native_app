@@ -2,9 +2,9 @@ import {Pressable, Text} from 'react-native'
 import {FontAwesome} from "@expo/vector-icons";
 import * as yup from "yup";
 
-import {Logo} from '../../../constants/Images'
-import {FormikForm, InputWithIcon, OAuthBtn, TextBtnContained} from "../../components";
-import AuthLayout from "./Auth.Layout";
+import {Logo} from 'constants/Images';
+import {ScrollableLayout} from "container";
+import {FormikForm, InputWithIcon, OAuthBtn, TextBtnContained} from "components";
 import {
     BackBtn,
     FormFooter,
@@ -33,7 +33,7 @@ const validationSchema = yup.object().shape({
 const CreateAccount = ({navigation}) => {
 
     return (
-        <AuthLayout withKeyboardAvoidance>
+        <ScrollableLayout withKeyboardAvoidance>
             {/* Go Back Icon */}
             <BackBtn onPress={() => navigation.navigate('OAuth')}>
                 <FontAwesome name="chevron-left" size={24} color="black"/>
@@ -111,7 +111,7 @@ const CreateAccount = ({navigation}) => {
                     </Pressable>
                 </RedirectText>
             </FormFooter>
-        </AuthLayout>
+        </ScrollableLayout>
     )
 }
 

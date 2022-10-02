@@ -1,5 +1,4 @@
 import {Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView} from "react-native";
-import {SCREEN_HEIGHT} from "../../../utils";
 
 const KeyboardAvoidingWrapper = ({children}) => {
 

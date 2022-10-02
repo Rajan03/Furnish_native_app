@@ -1,12 +1,6 @@
 import {StyleSheet} from "react-native";
 import styled from "styled-components/native";
-import {hp, normalize, wp} from "../../../utils";
-
-export const ScrollContainer = {
-    minHeight: '100%',
-    backgroundColor: "#fff",
-    flexDirection: 'column',
-}
+import {hp, normalize, wp} from "utils";
 
 //#region COMMON STYLES
 export const OrSeparator = styled.View`

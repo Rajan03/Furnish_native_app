@@ -2,9 +2,9 @@ import {useState} from "react";
 import * as Yup from "yup";
 import {FontAwesome} from "@expo/vector-icons";
 
-import {ForgotPassword} from "../../../constants/Images";
-import {FormikForm, InputWithIcon, TextBtnContained} from "../../components";
-import AuthLayout from "./Auth.Layout";
+import {ForgotPassword} from "constants/Images";
+import {FormikForm, InputWithIcon, TextBtnContained} from "components";
+import {ScrollableLayout} from "container";
 import {
     BackBtn,
     FooterMsgText,
@@ -34,7 +34,7 @@ const ForgotPasswordScreen = ({navigation}) => {
     }
 
     return (
-        <AuthLayout withKeyboardAvoidance>
+        <ScrollableLayout withKeyboardAvoidance>
             {/* Go Back Icon */}
             <BackBtn onPress={() => navigation.goBack()}>
                 <FontAwesome name="chevron-left" size={24} color="black"/>
@@ -78,7 +78,7 @@ const ForgotPasswordScreen = ({navigation}) => {
                     password
                 </FooterMsgText>
             </ForgotPswFooter>
-        </AuthLayout>
+        </ScrollableLayout>
     );
 }
 export default ForgotPasswordScreen;

@@ -2,9 +2,9 @@ import {Pressable, Text} from 'react-native'
 import {FontAwesome} from "@expo/vector-icons";
 import * as yup from "yup";
 
-import {Logo} from '../../../constants/Images'
-import {CheckBox, FormikForm, InputWithIcon, OAuthBtn, TextBtnContained} from "../../components";
-import AuthLayout from "./Auth.Layout";
+import {Logo} from 'constants/Images'
+import {CheckBox, FormikForm, InputWithIcon, OAuthBtn, TextBtnContained} from "components";
+import {ScrollableLayout} from "container";
 import {
     BackBtn,
     FormFooter,
@@ -30,7 +30,7 @@ const SignInScreen = ({navigation}) => {
 
     return (
         <>
-            <AuthLayout withKeyboardAvoidance>
+            <ScrollableLayout withKeyboardAvoidance>
                 {/* Go Back Icon */}
                 <BackBtn onPress={() => navigation.navigate('OAuth')}>
                     <FontAwesome name="chevron-left" size={24} color="black"/>
@@ -109,7 +109,7 @@ const SignInScreen = ({navigation}) => {
                         </Pressable>
                     </RedirectText>
                 </FormFooter>
-            </AuthLayout>
+            </ScrollableLayout>
         </>
     );
 }
