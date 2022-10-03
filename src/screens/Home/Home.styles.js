@@ -8,6 +8,29 @@ export const HomeStyles = StyleSheet.create({
     }
 });
 
+//#region Common Styles
+export const SectionHeaderContainer = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+`;
+export const SectionHeader = styled.Text`
+  font-size: 24px;
+  font-weight: 700;
+  color: #525252;
+`;
+export const SectionHeaderBtn = styled.Pressable`
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+export const SectionHeaderBtnTxt = styled.Text`
+  font-size: 16px;
+  font-weight: 600;
+  color: #525252;
+`;
+//#endregion Common Styles
+
 //#region Header
 export const Header = styled.View`
   height: 90px;
@@ -70,37 +93,56 @@ export const SpecialOfferLayout = styled.View`
   align-items: stretch;
   margin-top: 35px;
 `;
-export const SectionHeaderContainer = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-`;
-export const SectionHeader = styled.Text`
-    font-size: 24px;
-    font-weight: 700;
-    color: #525252;
-`;
-export const SectionHeaderBtn = styled.Pressable`
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-`;
-export const SectionHeaderBtnTxt = styled.Text`
-    font-size: 16px;
-    font-weight: 600;
-    color: #525252;
-`;
 //#endregion Special Offers
 
 //#region Category
 export const CategoryLayout = styled.View`
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 35px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 35px;
 `;
 export const CategoryCardStyles = {
     width: (SCREEN_WIDTH - 40) / 4,
     marginBottom: 20,
 };
+//#endregion Category
+
+//#region Most Popular
+export const MostPopularLayout = styled.View`
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-top: 35px;
+`;
+export const MostPopularCatChips = styled.ScrollView`
+  margin-top: 20px;
+`;
+export const MostPopularCatChip = styled.Pressable`
+  padding: 5px 18px;
+  border-radius: 20px;
+  background-color: ${p => p.isSelected ? '#525252' : 'transparent'};
+  border: 1px solid #525252;
+
+  margin-right: 10px;
+`;
+export const ChipTxt = styled.Text`
+  font-size: 16px;
+  font-weight: 600;
+  color: ${p => p.isSelected ? '#fff' : '#525252'};
+`;
+export const MostPopularProducts = styled.ScrollView`
+  margin-top: 20px;
+`;
+export const ProductCardStyles = {
+    width: ((SCREEN_WIDTH - 40) / 2) - 10,
+    height: 300,
+    marginRight: 20,
+}
+export const ProductsRow = {
+    justifyContent: 'space-between',
+    marginVertical: 10,
+    width: SCREEN_WIDTH - 40,
+}
+//#endregion Most Popular

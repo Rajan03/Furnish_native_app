@@ -8,6 +8,7 @@ import CheckBox from "./Checkboxes/Checkbox";
 import FormikForm from "./General/FormikForm";
 import OfferCard from "./cards/OfferCard";
 import CategoryCard from "./cards/CategoryCard";
+import ProductCard from "./cards/ProductCard";
 
 export {
     OAuthBtn,
@@ -19,5 +20,6 @@ export {
     FormikForm,
     CategoryCard,
     OfferCard,
-    SearchInput
+    SearchInput,
+    ProductCard
 };

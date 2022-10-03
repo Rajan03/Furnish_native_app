@@ -2,13 +2,13 @@ import {ScrollView} from "react-native";
 import {KeyboardAvoidingWrapper} from "components";
 
 
-const ScrollableLayout = ({withKeyboardAvoidance, style, children}) => {
+const ScrollableLayout = ({withKeyboardAvoidance, style, children, ...props}) => {
     const Screen = <>
         <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={[{
             minHeight: '100%',
             backgroundColor: "#fff",
             flexDirection: 'column',
-        }, style]}>
+        }, style]} {...props}>
             {children}
         </ScrollView>
     </>

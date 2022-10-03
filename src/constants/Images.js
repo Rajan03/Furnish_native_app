@@ -3,6 +3,11 @@ import ForgotPassword from "../../assets/images/security-bw.png";
 import Logo from "../../assets/images/logo.png";
 import OTP from "../../assets/images/otp.png";
 import Sofa from "../../assets/images/sofa.png";
+import FoamChair from "../../assets/images/foamChair.png";
+import Glass from "../../assets/images/glass.png";
+import BookCase from "../../assets/images/bookcase.png";
+import Lamp from "../../assets/images/lamp.jpg";
+import Chair from "../../assets/images/chair.png";
 
 
-export { Login, Logo, ForgotPassword, OTP, Sofa };
+export { Login, Logo, ForgotPassword, OTP, Sofa, Glass, Lamp, BookCase, Chair, FoamChair };

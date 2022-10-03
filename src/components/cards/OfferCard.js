@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
     },
 
     contentContainer: {
+        maxWidth: "80%",
         flexDirection: "column",
         alignItems: "flex-start",
         justifyContent: "space-between",
@@ -93,17 +94,23 @@ const styles = StyleSheet.create({
         color: "#333",
     },
     description: {
-        maxWidth: "80%",
+        maxWidth: 220,
+        maxHeight: 30,
+
         marginTop: 10,
         fontSize: 14,
         fontWeight: "400",
         color: "#525252",
+        overflow: "hidden",
+        whiteSpace: "nowrap",
+        textOverflow: "ellipsis",
     },
 
     imageContainer: {
         flex: 1,
-        minWidth: 100,
-        minHeight: 100,
+        minWidth: 140,
+        minHeight: 150,
+        transform: [{scaleX: -1}],
         alignSelf: "center",
         overflow: "hidden",
     },
