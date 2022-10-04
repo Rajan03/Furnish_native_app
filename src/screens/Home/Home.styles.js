@@ -1,11 +1,12 @@
 import {StyleSheet} from 'react-native';
 import styled from "styled-components/native";
-import {SCREEN_WIDTH} from "../../utils";
+import {hp, IS_SMALL_DEVICE, SCREEN_WIDTH} from "utils";
 
 export const HomeStyles = StyleSheet.create({
     container: {
-        paddingHorizontal: 20,
-    }
+        paddingHorizontal: hp(2),
+    },
+    offerCard: {marginTop: hp(2)},
 });
 
 //#region Common Styles
@@ -15,7 +16,7 @@ export const SectionHeaderContainer = styled.View`
   align-items: stretch;
 `;
 export const SectionHeader = styled.Text`
-  font-size: 24px;
+  font-size: ${hp(2.5)};
   font-weight: 700;
   color: #525252;
 `;
@@ -25,7 +26,7 @@ export const SectionHeaderBtn = styled.Pressable`
   align-items: center;
 `;
 export const SectionHeaderBtnTxt = styled.Text`
-  font-size: 16px;
+  font-size: ${hp(1.6)};
   font-weight: 600;
   color: #525252;
 `;
@@ -33,7 +34,7 @@ export const SectionHeaderBtnTxt = styled.Text`
 
 //#region Header
 export const Header = styled.View`
-  height: 90px;
+  height: ${hp(10)}px;
 
   flex-direction: row;
   justify-content: space-between;
@@ -63,21 +64,21 @@ export const UserName = styled.View`
 
 // Good Morning Text
 export const GoodMorningTxt = styled.Text`
-  font-size: 16px;
+  font-size: ${hp(1.8)}px;
   color: #8D94A2;
 `;
 
 // User Name Text
 export const UserNameTxt = styled.Text`
-  font-size: 20px;
+  font-size: ${hp(2.3)}px;
   font-weight: 600;
   color: #525252;
 `;
 
 // Menu Icon Btn
 export const IconBtn = styled.Pressable`
-  width: 40px;
-  height: 40px;
+  width: ${IS_SMALL_DEVICE ? "25px" : "40px"};
+  height: ${IS_SMALL_DEVICE ? '90%' : '60%'};
   border-radius: 10px;
   background-color: #f2f2f5;
   justify-content: center;
@@ -91,7 +92,7 @@ export const SpecialOfferLayout = styled.View`
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  margin-top: 35px;
+  margin-top: ${hp(3.5)}px;
 `;
 //#endregion Special Offers
 
@@ -101,10 +102,10 @@ export const CategoryLayout = styled.View`
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 35px;
+  margin-top: ${hp(3.5)}px;
 `;
 export const CategoryCardStyles = {
-    width: (SCREEN_WIDTH - 40) / 4,
+    width: (SCREEN_WIDTH - (hp(2) * 2)) / 4,
     marginBottom: 20,
 };
 //#endregion Category
@@ -114,7 +115,7 @@ export const MostPopularLayout = styled.View`
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  margin-top: 35px;
+  margin-top: ${hp(3.5)}px;
 `;
 export const MostPopularCatChips = styled.ScrollView`
   margin-top: 20px;
@@ -128,21 +129,24 @@ export const MostPopularCatChip = styled.Pressable`
   margin-right: 10px;
 `;
 export const ChipTxt = styled.Text`
-  font-size: 16px;
+  font-size: ${hp(1.8)}px;
   font-weight: 600;
   color: ${p => p.isSelected ? '#fff' : '#525252'};
 `;
 export const MostPopularProducts = styled.ScrollView`
   margin-top: 20px;
 `;
-export const ProductCardStyles = {
-    width: ((SCREEN_WIDTH - 40) / 2) - 10,
+export const OddProductCardStyles = {
+    width: ((SCREEN_WIDTH - 40) / 2) - 5,
     height: 300,
-    marginRight: 20,
-}
+    marginRight: 5,
+};
+export const EvenProductCardStyles = {
+    width: ((SCREEN_WIDTH - 40) / 2) - 5,
+    height: 300,
+    marginLeft: 5,
+};
 export const ProductsRow = {
-    justifyContent: 'space-between',
     marginVertical: 10,
-    width: SCREEN_WIDTH - 40,
 }
 //#endregion Most Popular

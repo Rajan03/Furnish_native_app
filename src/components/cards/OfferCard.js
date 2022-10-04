@@ -1,12 +1,7 @@
-import {Image, Text, View, StyleSheet, ScrollView} from "react-native";
 import {useState} from "react";
-import {SCREEN_WIDTH} from "../../utils";
+import {Image, Text, View, StyleSheet, ScrollView} from "react-native";
+import {hp, IS_SMALL_DEVICE, SCREEN_WIDTH} from "utils";
 
-const colors = [
-    "#9d7e96",
-    "#a18e69",
-    "#7c9a7c",
-]
 const OfferCard = ({offer, styles: extraStyles}) => {
     const [activeSlide, setActiveSlide] = useState(0);
 
@@ -59,16 +54,15 @@ const styles = StyleSheet.create({
     container: {
         position: "relative",
 
-        width: SCREEN_WIDTH - 40,
-        minHeight: 160,
-        maxHeight: 160,
+        width: SCREEN_WIDTH - (hp(2) * 2),
+        maxHeight: !IS_SMALL_DEVICE ? 180 : 130,
 
         borderRadius: 10,
         backgroundColor: "#dadada",
     },
 
     card: {
-        width: SCREEN_WIDTH - 40,
+        width: SCREEN_WIDTH - (hp(2) * 2),
         flexDirection: "row",
         alignItems: "stretch",
         borderRadius: 10,
@@ -77,38 +71,36 @@ const styles = StyleSheet.create({
     },
 
     contentContainer: {
-        maxWidth: "80%",
+        maxWidth: hp(80),
         flexDirection: "column",
         alignItems: "flex-start",
-        justifyContent: "space-between",
+        justifyContent: "flex-start",
     },
     offCount: {
-        fontSize: 32,
+        fontSize: hp(3.2),
         fontWeight: "900",
         color: "#333",
     },
     title: {
-        marginTop: 10,
-        fontSize: 24,
-        fontWeight: "600",
+        marginTop: 12,
+        fontSize: hp(2.8),
+        fontWeight: "700",
         color: "#333",
     },
     description: {
-        maxWidth: 220,
-        maxHeight: 30,
+        maxWidth: (SCREEN_WIDTH - (hp(2) * 2)) / 1.7,
+        maxHeight: hp(10),
 
         marginTop: 10,
-        fontSize: 14,
+        fontSize: hp(1.6),
         fontWeight: "400",
         color: "#525252",
         overflow: "hidden",
-        whiteSpace: "nowrap",
-        textOverflow: "ellipsis",
     },
 
     imageContainer: {
         flex: 1,
-        minWidth: 140,
+        minWidth: hp(18),
         minHeight: 150,
         transform: [{scaleX: -1}],
         alignSelf: "center",

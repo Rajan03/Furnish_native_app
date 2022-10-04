@@ -4,11 +4,12 @@ import {Ionicons} from '@expo/vector-icons';
 import {SafeAreaLayout, ScrollableLayout} from "container";
 import {CategoryCard, OfferCard, ProductCard, SearchInput} from "components";
 import {Sofa, Glass, Lamp, BookCase, Chair, FoamChair} from "constants/Images";
+import {hp} from "utils";
 import {
     Avatar,
     CategoryCardStyles,
     CategoryLayout,
-    ChipTxt,
+    ChipTxt, EvenProductCardStyles,
     GoodMorningTxt,
     Header,
     HomeStyles as styles,
@@ -17,7 +18,7 @@ import {
     MostPopularCatChips,
     MostPopularLayout,
     MostPopularProducts,
-    ProductCardStyles,
+    OddProductCardStyles,
     ProductsRow,
     SectionHeader,
     SectionHeaderBtn,
@@ -78,6 +79,7 @@ const categories = [
 ]
 const products = [
     {
+        id: 1,
         name: "Small Book Case",
         price: 1450,
         image: BookCase,
@@ -96,6 +98,7 @@ const products = [
         ]
     },
     {
+        id: 2,
         name: "Glass Lamp",
         price: 400,
         image: Lamp,
@@ -114,6 +117,7 @@ const products = [
         ]
     },
     {
+        id: 3,
         name: "Glass Package",
         price: 220,
         image: Glass,
@@ -132,6 +136,7 @@ const products = [
         ]
     },
     {
+        id: 4,
         name: "Wooden Chair",
         price: 370,
         image: Chair,
@@ -150,6 +155,7 @@ const products = [
         ]
     },
     {
+        id: 5,
         name: "Foam Padded Chair",
         price: 2000,
         image: FoamChair,
@@ -207,7 +213,7 @@ const HomeScreen = () => {
 
                     {/* Menu Btn */}
                     <IconBtn>
-                        <Ionicons name="notifications-outline" size={24} color="#525252"/>
+                        <Ionicons name="notifications-outline" size={hp(2.5)} color="#525252"/>
                     </IconBtn>
                 </Header>
 
@@ -220,7 +226,7 @@ const HomeScreen = () => {
                     <SectionHeading title={"Special Offer"} onPress={() => viewAllPressed("specialOffer")}/>
 
                     {/* Offer Card Slider */}
-                    <OfferCard styles={{marginTop: 20}} offer={offers}/>
+                    <OfferCard styles={styles.offerCard} offer={offers}/>
                 </SpecialOfferLayout>
 
                 {/* Categories Icons */}
@@ -259,8 +265,9 @@ const HomeScreen = () => {
                 {/* Products FlatList */}
                 <MostPopularProducts horizontal>
                     <FlatList data={products}
-                              renderItem={({item}) => <ProductCard product={item} styles={ProductCardStyles}/>}
-                              keyExtractor={(_, i) => i.toString()}
+                              renderItem={({item}) => <ProductCard
+                                  product={item}
+                                  styles={!(item.id % 2) ? EvenProductCardStyles : OddProductCardStyles}/>}
                               numColumns={2}
                               columnWrapperStyle={ProductsRow}
                               showsVerticalScrollIndicator={false}

@@ -1,5 +1,6 @@
 import {View, StyleSheet, Image, Text} from "react-native";
 import {Ionicons} from "@expo/vector-icons";
+import {hp, IS_SMALL_DEVICE} from "../../utils";
 
 const ProductCard = ({product, styles: extraStyles}) => {
     const {name, price, image, rating, soldCount} = product;
@@ -10,7 +11,7 @@ const ProductCard = ({product, styles: extraStyles}) => {
                 <View style={styles.imageContainer}>
                     {/* Like icon */}
                     <View style={styles.likeIconContainer}>
-                        <Ionicons name="heart-outline" size={18} color="#fff"/>
+                        <Ionicons name="heart-outline" size={hp(2)} color="#fff"/>
                     </View>
                     {/* Image */}
                     <Image source={image} style={styles.image}/>
@@ -23,7 +24,7 @@ const ProductCard = ({product, styles: extraStyles}) => {
                 <View style={styles.rateAndSold}>
                     {/* Rating */}
                     <View style={styles.ratingContainer}>
-                        <Ionicons name={rating % 1 === 0 ? "star" : "star-half"} size={16} color="#525252"/>
+                        <Ionicons name={rating % 1 === 0 ? "star" : "star-half"} size={hp(1.8)} color="#525252"/>
                         <Text style={styles.rating}>{rating}</Text>
                     </View>
 
@@ -33,7 +34,7 @@ const ProductCard = ({product, styles: extraStyles}) => {
                     {/* Sold */}
                     <View style={styles.soldContainer}>
                         <Text style={styles.sold}>{soldCount}</Text>
-                        <Ionicons name="cart-outline" size={16} color="#525252"/>
+                        <Ionicons name="cart-outline" size={hp(1.8)} color="#525252"/>
                     </View>
                 </View>
 
@@ -49,8 +50,6 @@ export default ProductCard;
 
 const styles = StyleSheet.create({
     container: {
-        height: 300,
-        width: 180,
         flexDirection: 'column',
     },
 
@@ -72,7 +71,7 @@ const styles = StyleSheet.create({
         resizeMode: 'cover',
     },
     likeIconContainer: {
-    position: 'absolute',
+        position: 'absolute',
         top: 10,
         right: 10,
 
@@ -81,11 +80,11 @@ const styles = StyleSheet.create({
         padding: 5,
 
         zIndex: 1,
-},
+    },
 
     name: {
-        paddingVertical: 8,
-        fontSize: 20,
+        paddingVertical: hp(0.8),
+        fontSize: hp(2),
         fontWeight: '700',
         color: '#525252',
     },
@@ -95,21 +94,22 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         alignItems: 'center',
     },
+
     ratingContainer: {
         flexDirection: 'row',
         alignItems: 'center',
     },
     rating: {
         marginLeft: 4,
-        fontSize: 16,
+        fontSize: hp(1.8),
         fontWeight: '600',
         color: '#525252',
     },
     separator: {
-        height: 15,
+        height: hp(1.8),
         width: 2,
         backgroundColor: '#525252',
-        marginHorizontal: 10,
+        marginHorizontal: hp(1.3),
     },
     soldContainer: {
         flexDirection: 'row',
@@ -121,15 +121,14 @@ const styles = StyleSheet.create({
     },
     sold: {
         marginRight: 4,
-        fontSize: 16,
+        fontSize: hp(1.8),
         fontWeight: '600',
         color: '#525252',
     },
 
-
     price: {
-        paddingTop: 8,
-        fontSize: 18,
+        paddingTop: hp(0.8),
+        fontSize: hp(1.8),
         fontWeight: '700',
         color: '#525252',
     }

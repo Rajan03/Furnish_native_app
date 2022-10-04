@@ -1,11 +1,12 @@
 import {StyleSheet, TextInput, View} from 'react-native';
 import {FontAwesome} from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import {hp} from "../../utils";
 
-const SearchInput = ({value, onChange, placeholder}) => {
+const SearchInput = ({value, onChange, placeholder, styles: extraStyles}) => {
     return (
-        <View style={styles.inputContainer}>
-            <FontAwesome name="search" size={24} style={styles.darkIcon}/>
+        <View style={[styles.inputContainer, extraStyles]}>
+            <FontAwesome name="search" size={hp(2.5)} style={styles.darkIcon}/>
 
             <TextInput
                 style={styles.input}
@@ -14,14 +15,14 @@ const SearchInput = ({value, onChange, placeholder}) => {
                 onChangeText={onChange}
             />
 
-            <MaterialCommunityIcons name="swap-horizontal" size={24} style={styles.secondaryIcon}/>
+            <MaterialCommunityIcons name="swap-horizontal" size={hp(2.5)} style={styles.secondaryIcon}/>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     inputContainer: {
-        minHeight: 60,
+        minHeight: hp(6),
         flexDirection: "row",
         alignItems: "center",
         backgroundColor: "#f6f8f8",
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
     input: {
         flex: 1,
         alignSelf: "stretch",
-        fontSize: 18,
+        fontSize: hp(2.2),
         fontWeight: "400",
         color: "#d2d2d2",
     },

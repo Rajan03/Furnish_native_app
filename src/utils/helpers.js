@@ -2,8 +2,8 @@ import {Dimensions, Platform, PixelRatio} from "react-native";
 import {heightPercentageToDP, widthPercentageToDP} from "react-native-responsive-screen";
 
 const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = Dimensions.get('window');
-
-export {SCREEN_WIDTH, SCREEN_HEIGHT};
+const IS_SMALL_DEVICE = SCREEN_HEIGHT < 600;
+export {SCREEN_WIDTH, SCREEN_HEIGHT, IS_SMALL_DEVICE};
 
 export const normalize = (size) => {
     const scale = SCREEN_WIDTH / 320;
