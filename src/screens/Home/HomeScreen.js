@@ -255,6 +255,17 @@ const HomeScreen = () => {
                     </MostPopularCatChips>
 
                 </MostPopularLayout>
+
+                {/* Products FlatList */}
+                <MostPopularProducts horizontal>
+                    <FlatList data={products}
+                              renderItem={({item}) => <ProductCard product={item} styles={ProductCardStyles}/>}
+                              keyExtractor={(_, i) => i.toString()}
+                              numColumns={2}
+                              columnWrapperStyle={ProductsRow}
+                              showsVerticalScrollIndicator={false}
+                    />
+                </MostPopularProducts>
             </ScrollableLayout>
         </SafeAreaLayout>
     )
