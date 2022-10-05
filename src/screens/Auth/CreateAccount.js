@@ -5,6 +5,7 @@ import * as yup from "yup";
 import {Logo} from 'constants/Images';
 import {ScrollableLayout} from "container";
 import {FormikForm, InputWithIcon, OAuthBtn, TextBtnContained} from "components";
+import {ScreenNames} from "constants/ScreenConstants";
 import {
     BackBtn,
     FormFooter,
@@ -35,7 +36,7 @@ const CreateAccount = ({navigation}) => {
     return (
         <ScrollableLayout withKeyboardAvoidance>
             {/* Go Back Icon */}
-            <BackBtn onPress={() => navigation.navigate('OAuth')}>
+            <BackBtn onPress={() => navigation.navigate(ScreenNames.OAuth)}>
                 <FontAwesome name="chevron-left" size={24} color="black"/>
             </BackBtn>
 
@@ -106,7 +107,7 @@ const CreateAccount = ({navigation}) => {
                 {/* Sign Up redirection text with signInText Styles */}
                 <RedirectText>
                     <Text>Already have an account? {"  "}</Text>
-                    <Pressable onPress={() => navigation.navigate("SignIn")}>
+                    <Pressable onPress={() => navigation.navigate(ScreenNames.SignIn)}>
                         <Text style={styles.redirectText}>Sign In</Text>
                     </Pressable>
                 </RedirectText>

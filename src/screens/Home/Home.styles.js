@@ -16,7 +16,7 @@ export const SectionHeaderContainer = styled.View`
   align-items: stretch;
 `;
 export const SectionHeader = styled.Text`
-  font-size: ${hp(2.5)};
+  font-size: ${hp(2.5)}px;
   font-weight: 700;
   color: #525252;
 `;
@@ -26,7 +26,7 @@ export const SectionHeaderBtn = styled.Pressable`
   align-items: center;
 `;
 export const SectionHeaderBtnTxt = styled.Text`
-  font-size: ${hp(1.6)};
+  font-size: ${hp(1.6)}px;
   font-weight: 600;
   color: #525252;
 `;

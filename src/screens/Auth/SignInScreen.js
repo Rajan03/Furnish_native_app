@@ -5,6 +5,7 @@ import * as yup from "yup";
 import {Logo} from 'constants/Images'
 import {CheckBox, FormikForm, InputWithIcon, OAuthBtn, TextBtnContained} from "components";
 import {ScrollableLayout} from "container";
+import {ScreenNames} from "constants/ScreenConstants";
 import {
     BackBtn,
     FormFooter,
@@ -32,7 +33,7 @@ const SignInScreen = ({navigation}) => {
         <>
             <ScrollableLayout withKeyboardAvoidance>
                 {/* Go Back Icon */}
-                <BackBtn onPress={() => navigation.navigate('OAuth')}>
+                <BackBtn onPress={() => navigation.navigate(ScreenNames.OAuth)}>
                     <FontAwesome name="chevron-left" size={24} color="black"/>
                 </BackBtn>
 
@@ -76,7 +77,7 @@ const SignInScreen = ({navigation}) => {
 
                                 {/* Forgot Password Action */}
                                 <Pressable style={styles.forgotPasswordBtn}
-                                           onPress={() => navigation.navigate('ForgotPassword')}>
+                                           onPress={() => navigation.navigate(ScreenNames.ForgotPassword)}>
                                     <Text>Forgot Password?</Text>
                                 </Pressable>
                             </SignInFormAction>
@@ -104,7 +105,7 @@ const SignInScreen = ({navigation}) => {
                     {/* Sign Up redirection text with signInText Styles */}
                     <RedirectText>
                         <Text>Don't have an account? {"  "}</Text>
-                        <Pressable onPress={() => navigation.navigate("CreateAccount")}>
+                        <Pressable onPress={() => navigation.navigate(ScreenNames.CreateAccount)}>
                             <Text style={styles.redirectText}>Sign Up</Text>
                         </Pressable>
                     </RedirectText>

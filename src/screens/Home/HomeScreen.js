@@ -250,13 +250,11 @@ const HomeScreen = () => {
                         </MostPopularCatChip>
 
                         {/* Categories Chips */}
-                        {categories.map(({title}) => {
+                        {categories.map(({title}, i) => {
                             const selected = popularFilter.toLowerCase() === title.toLowerCase()
-                            return <>
-                                <MostPopularCatChip isSelected={selected} key={title}>
-                                    <ChipTxt isSelected={selected}>{title}</ChipTxt>
-                                </MostPopularCatChip>
-                            </>
+                            return <MostPopularCatChip isSelected={selected} key={i}>
+                                <ChipTxt isSelected={selected}>{title}</ChipTxt>
+                            </MostPopularCatChip>
                         })}
                     </MostPopularCatChips>
 
@@ -265,12 +263,14 @@ const HomeScreen = () => {
                 {/* Products FlatList */}
                 <MostPopularProducts horizontal>
                     <FlatList data={products}
+                              key={'horizontal'}
                               renderItem={({item}) => <ProductCard
                                   product={item}
                                   styles={!(item.id % 2) ? EvenProductCardStyles : OddProductCardStyles}/>}
                               numColumns={2}
                               columnWrapperStyle={ProductsRow}
                               showsVerticalScrollIndicator={false}
+                              keyExtractor={item => item.id.toString()}
                     />
                 </MostPopularProducts>
             </ScrollableLayout>

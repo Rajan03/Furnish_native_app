@@ -5,6 +5,7 @@ import {FontAwesome} from "@expo/vector-icons";
 import {ForgotPassword} from "constants/Images";
 import {FormikForm, InputWithIcon, TextBtnContained} from "components";
 import {ScrollableLayout} from "container";
+import {ScreenNames} from "constants/ScreenConstants";
 import {
     BackBtn,
     FooterMsgText,
@@ -29,7 +30,7 @@ const ForgotPasswordScreen = ({navigation}) => {
 
         setTimeout(() => {
             setLoading(false);
-            navigation.navigate('OtpScreen');
+            navigation.navigate(ScreenNames.OtpScreen);
         }, 8000);
     }
 
@@ -67,7 +68,7 @@ const ForgotPasswordScreen = ({navigation}) => {
 
                         {/* Reset Password Btn */}
                         <TextBtnContained disabled={loading} btnText="Reset Password"
-                                          onPressCallback={() => navigation.navigate('OtpScreen')}/>
+                                          onPressCallback={() => navigation.navigate(ScreenNames.OtpScreen)}/>
                     </FormGroup>
                 )}
             </FormikForm>

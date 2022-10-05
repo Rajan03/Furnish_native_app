@@ -4,6 +4,7 @@ import {FontAwesome} from "@expo/vector-icons";
 import {OTP} from "constants/Images";
 import {ScrollableLayout} from "container";
 import {OtpInput, TextBtnContained} from "components";
+import {ScreenNames} from "constants/ScreenConstants";
 import {BackBtn, FormGroup, FormHeaderText, ImageContainer, ImageStyles} from "./Auth.styles";
 
 const OtpVerification = ({navigation}) => {
@@ -19,7 +20,7 @@ const OtpVerification = ({navigation}) => {
     return (
         <ScrollableLayout withKeyboardAvoidance>
             {/* Go Back Icon */}
-            <BackBtn onPress={() => navigation.navigate('ForgotPassword')}>
+            <BackBtn onPress={() => navigation.navigate(ScreenNames.ForgotPassword)}>
                 <FontAwesome name="chevron-left" size={24} color="black"/>
             </BackBtn>
 

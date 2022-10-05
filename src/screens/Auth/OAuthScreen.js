@@ -4,6 +4,7 @@ import {FontAwesome} from "@expo/vector-icons";
 import {Login} from "constants/Images";
 import {OAuthBtn, TextBtnContained} from "components";
 import {ScrollableLayout} from "container";
+import {ScreenNames} from "constants/ScreenConstants";
 import {
     ActionsContainer,
     HeaderText,
@@ -56,12 +57,12 @@ const OAuthScreen = ({navigation}) => {
                     <TextBtnContained
                         styles={{marginBottom: 20}}
                         btnText="Sign In With Password"
-                        onPressCallback={() => navigation.navigate("SignIn")}/>
+                        onPressCallback={() => navigation.navigate(ScreenNames.SignIn)}/>
 
                     {/* Sign Up redirection text */}
                     <RedirectText>
                         <Text>Don't have an account? {"  "}</Text>
-                        <Pressable onPress={() => navigation.navigate("CreateAccount")}>
+                        <Pressable onPress={() => navigation.navigate(ScreenNames.CreateAccount)}>
                             <Text style={styles.redirectText}>Sign Up</Text>
                         </Pressable>
                     </RedirectText>
