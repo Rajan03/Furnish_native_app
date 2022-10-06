@@ -2,11 +2,12 @@ import {StyleSheet} from 'react-native';
 import styled from "styled-components/native";
 import {hp, IS_SMALL_DEVICE, SCREEN_WIDTH} from "utils";
 
+//#region Home Screen
 export const HomeStyles = StyleSheet.create({
-    container: {
-        paddingHorizontal: hp(2),
-    },
-    offerCard: {marginTop: hp(2)},
+	container: {
+		paddingHorizontal: hp(2),
+	},
+	offerCard: {marginTop: hp(2)},
 });
 
 //#region Common Styles
@@ -105,8 +106,8 @@ export const CategoryLayout = styled.View`
   margin-top: ${hp(3.5)}px;
 `;
 export const CategoryCardStyles = {
-    width: (SCREEN_WIDTH - (hp(2) * 2)) / 4,
-    marginBottom: 20,
+	width: (SCREEN_WIDTH - (hp(2) * 2)) / 4,
+	marginBottom: 20,
 };
 //#endregion Category
 
@@ -137,16 +138,44 @@ export const MostPopularProducts = styled.ScrollView`
   margin-top: 20px;
 `;
 export const OddProductCardStyles = {
-    width: ((SCREEN_WIDTH - 40) / 2) - 5,
-    height: 300,
-    marginRight: 5,
+	width: ((SCREEN_WIDTH - 40) / 2) - 5,
+	height: 300,
+	marginRight: 5,
 };
 export const EvenProductCardStyles = {
-    width: ((SCREEN_WIDTH - 40) / 2) - 5,
-    height: 300,
-    marginLeft: 5,
+	width: ((SCREEN_WIDTH - 40) / 2) - 5,
+	height: 300,
+	marginLeft: 5,
 };
 export const ProductsRow = {
-    marginVertical: 10,
+	marginVertical: 10,
 }
 //#endregion Most Popular
+
+//#endregion Home Screen
+
+//#region Notifications Screen
+export const NotificationStyles = StyleSheet.create({
+	notificationContainer: {
+		flex: 1,
+		flexDirection: "column",
+		justifyContent: "flex-start",
+		alignItems: "stretch",
+	},
+	notificationCard: {
+		paddingHorizontal: hp(2),
+		marginBottom: hp(4),
+	}
+});
+
+//#endregion Notifications Screen
+
+//#region Offers Screen
+export const OfferStyles = StyleSheet.create({
+	offerContainer: {
+		paddingHorizontal: hp(2),
+	},
+	offerCard: {marginTop: hp(2)},
+});
+
+//#endregion Offers Screen

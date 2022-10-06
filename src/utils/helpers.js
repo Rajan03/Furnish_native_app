@@ -21,3 +21,11 @@ export const hp = (size) => {
 export const wp = (size) => {
     return Math.round(PixelRatio.roundToNearestPixel(widthPercentageToDP(size)))
 }
+
+export const hideTabBar = (navigation) => {
+    navigation.getParent()?.setOptions({tabBarStyle: {display: "none"}});
+}
+
+export const showTabBar = (navigation) => {
+    navigation.getParent()?.setOptions({tabBarStyle: {display: "flex"}});
+}
