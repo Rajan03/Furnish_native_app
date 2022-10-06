@@ -11,6 +11,10 @@ export const ScreenNames = {
 
     // Home Stack
     HOME: 'Home',
+    NOTIFICATIONS: 'Notifications',
+    OFFERS: 'Offers',
+
+    // Cart Stack
     CART: 'Cart',
     ORDERS: 'Orders',
     WALLET: 'Wallet',

@@ -9,6 +9,8 @@ import FormikForm from "./General/FormikForm";
 import OfferCard from "./cards/OfferCard";
 import CategoryCard from "./cards/CategoryCard";
 import ProductCard from "./cards/ProductCard";
+import NotificationsCardWithDate from "./cards/NotificationsCardWithDate";
+import ScreenHeader from "./Headers/ScreenHeader";
 
 export {
     OAuthBtn,
@@ -21,5 +23,7 @@ export {
     CategoryCard,
     OfferCard,
     SearchInput,
-    ProductCard
+    ProductCard,
+    NotificationsCardWithDate,
+    ScreenHeader,
 };

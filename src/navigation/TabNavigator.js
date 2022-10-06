@@ -1,6 +1,7 @@
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {FontAwesome, MaterialCommunityIcons} from "@expo/vector-icons";
 import {StyleSheet} from 'react-native';
+import {getFocusedRouteNameFromRoute} from "@react-navigation/native";
 
 import {CartStack, HomeStack} from "stacks";
 import {ScreenNames, ScreenStacks} from "constants/ScreenConstants";
@@ -9,6 +10,16 @@ import {hp} from "utils";
 const Tab = createBottomTabNavigator();
 
 export const TabNavigator = () => {
+	const commonOptions = (props) => ({
+		headerShown: false,
+		tabBarIcon: (p) => getTabBarIcon(p, props),
+		tabBarActiveTintColor: '#525252',
+		tabBarInactiveTintColor: '#bbbbbb',
+		tabBarLabelStyle: styles.tabBarLabel,
+		tabBarStyle: styles.tabBar,
+	})
+
+	// Returns the icon tag for the tab bar
 	const getTabBarIcon = ({color, size}, {route, navigation}) => {
 		const {name} = route;
 		const isFocused = navigation.isFocused();
@@ -29,19 +40,22 @@ export const TabNavigator = () => {
 	}
 
 	return (
-		<Tab.Navigator screenOptions={(props) => ({
-			headerShown: false,
-			tabBarStyle: styles.tabBar,
-			tabBarIcon: (p) => getTabBarIcon(p, props),
-			tabBarActiveTintColor: '#525252',
-			tabBarInactiveTintColor: '#bbbbbb',
-			tabBarLabelStyle: styles.tabBarLabel,
-		})}>
+		<Tab.Navigator screenOptions={commonOptions}>
+			{/* Home Screen */}
 			<Tab.Screen name={ScreenStacks.HOME} component={HomeStack} options={{tabBarLabel: ScreenNames.HOME}}/>
+
+			{/* Cart Screen */}
 			<Tab.Screen name={ScreenStacks.CART} component={CartStack} options={{tabBarLabel: ScreenNames.CART}}/>
+
+			{/* Orders Screen */}
 			<Tab.Screen name={ScreenStacks.ORDERS} component={CartStack} options={{tabBarLabel: ScreenNames.ORDERS}}/>
+
+			{/* Wallet Screen */}
 			<Tab.Screen name={ScreenStacks.WALLET} component={CartStack} options={{tabBarLabel: ScreenNames.WALLET}}/>
+
+			{/* Profile Screen */}
 			<Tab.Screen name={ScreenStacks.PROFILE} component={CartStack} options={{tabBarLabel: ScreenNames.PROFILE}}/>
+
 		</Tab.Navigator>
 	)
 }
