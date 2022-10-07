@@ -14,7 +14,7 @@ export const ScreenNames = {
     NOTIFICATIONS: 'Notifications',
     OFFERS: 'Offers',
     POPULAR: 'Popular',
-    CATEGORIES: 'caterories',
+    CATEGORY: 'Category',
 
     // Cart Stack
     CART: 'Cart',

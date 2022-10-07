@@ -7,6 +7,7 @@ import HomeScreen from "./Home/HomeScreen";
 import Notifications from "./Home/Notifications";
 import OffersScreen from "./Home/OffersScreen";
 import MostPopularScreen from "./Home/MostPopularScreen";
+import CategoryScreen from "./Home/CategoryScreen";
 
 export {
 	OAuthScreen,
@@ -17,5 +18,6 @@ export {
 	HomeScreen,
 	Notifications,
 	OffersScreen,
-	MostPopularScreen
+	MostPopularScreen,
+	CategoryScreen
 };

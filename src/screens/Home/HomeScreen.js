@@ -49,8 +49,9 @@ const HomeScreen = ({navigation}) => {
 	}
 
 	const onCatSelect = (i) => {
-		console.log(categories[i].title);
+		navigation.navigate(ScreenNames.CATEGORY, {category: categories[i]});
 	}
+
 	return (
 		<SafeAreaLayout>
 			<ScrollableLayout style={styles.container}>
