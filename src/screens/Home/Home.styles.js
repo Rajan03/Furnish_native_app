@@ -2,6 +2,12 @@ import {StyleSheet} from 'react-native';
 import styled from "styled-components/native";
 import {hp, IS_SMALL_DEVICE, SCREEN_WIDTH} from "utils";
 
+//#region Common Styles
+export const chipsContainer = {
+	marginTop: 20,
+}
+//#endregion Common Styles
+
 //#region Home Screen
 export const HomeStyles = StyleSheet.create({
 	container: {
@@ -118,22 +124,6 @@ export const MostPopularLayout = styled.View`
   align-items: stretch;
   margin-top: ${hp(3.5)}px;
 `;
-export const MostPopularCatChips = styled.ScrollView`
-  margin-top: 20px;
-`;
-export const MostPopularCatChip = styled.Pressable`
-  padding: 5px 18px;
-  border-radius: 20px;
-  background-color: ${p => p.isSelected ? '#525252' : 'transparent'};
-  border: 1px solid #525252;
-
-  margin-right: 10px;
-`;
-export const ChipTxt = styled.Text`
-  font-size: ${hp(1.8)}px;
-  font-weight: 600;
-  color: ${p => p.isSelected ? '#fff' : '#525252'};
-`;
 export const MostPopularProducts = styled.ScrollView`
   margin-top: 20px;
 `;
@@ -177,5 +167,8 @@ export const OfferStyles = StyleSheet.create({
 	},
 	offerCard: {marginTop: hp(2)},
 });
-
+export const OfferScreenChipsStyles = {
+	marginBottom: hp(2),
+	paddingHorizontal: hp(2),
+}
 //#endregion Offers Screen

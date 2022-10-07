@@ -6,6 +6,7 @@ import OtpVerification from "./Auth/OtpVerification";
 import HomeScreen from "./Home/HomeScreen";
 import Notifications from "./Home/Notifications";
 import OffersScreen from "./Home/OffersScreen";
+import MostPopularScreen from "./Home/MostPopularScreen";
 
 export {
 	OAuthScreen,
@@ -15,5 +16,6 @@ export {
 	OtpVerification,
 	HomeScreen,
 	Notifications,
-	OffersScreen
+	OffersScreen,
+	MostPopularScreen
 };

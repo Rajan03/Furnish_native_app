@@ -11,6 +11,7 @@ import CategoryCard from "./cards/CategoryCard";
 import ProductCard from "./cards/ProductCard";
 import NotificationsCardWithDate from "./cards/NotificationsCardWithDate";
 import ScreenHeader from "./Headers/ScreenHeader";
+import HorizontalChipSet from "./Chip/HorizontalChipSet";
 
 export {
     OAuthBtn,
@@ -26,4 +27,5 @@ export {
     ProductCard,
     NotificationsCardWithDate,
     ScreenHeader,
+    HorizontalChipSet
 };

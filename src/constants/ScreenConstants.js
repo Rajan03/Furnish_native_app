@@ -13,6 +13,8 @@ export const ScreenNames = {
     HOME: 'Home',
     NOTIFICATIONS: 'Notifications',
     OFFERS: 'Offers',
+    POPULAR: 'Popular',
+    CATEGORIES: 'caterories',
 
     // Cart Stack
     CART: 'Cart',
