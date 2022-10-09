@@ -1,11 +1,19 @@
+import {useEffect} from "react";
 import {FlatList, ScrollView} from "react-native";
 
 import {ScrollableLayout} from "container";
+import {hideTabBar, showTabBar} from "utils";
 import {OfferCard, ScreenHeader} from "components";
 import {OfferStyles as styles} from "./Home.styles";
 import {offers} from "constants/data";
 
 const OffersScreen = ({navigation}) => {
+
+	// Set Tab Bar visibility hidden on Load and visible on Unload
+	useEffect(() => {
+		hideTabBar(navigation);
+		return () => showTabBar(navigation)
+	}, []);
 
 	return (
 		<ScrollableLayout>

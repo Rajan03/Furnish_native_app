@@ -1,12 +1,13 @@
-import {View, StyleSheet, Image, Text} from "react-native";
+import {View, StyleSheet, Image, Text, Pressable} from "react-native";
 import {Ionicons} from "@expo/vector-icons";
-import {hp, IS_SMALL_DEVICE} from "../../utils";
+import {hp} from "utils";
+import {TextWithIconChip, RatingIconText} from "../Chip";
 
-const ProductCard = ({product, styles: extraStyles}) => {
+const ProductCard = ({product, onCardPress, styles: extraStyles}) => {
     const {name, price, image, rating, soldCount} = product;
     return (
         <>
-            <View style={[styles.container, extraStyles]}>
+            <Pressable onPress={onCardPress} style={[styles.container, extraStyles]}>
                 {/* Image ANd Like Btn */}
                 <View style={styles.imageContainer}>
                     {/* Like icon */}
@@ -23,25 +24,19 @@ const ProductCard = ({product, styles: extraStyles}) => {
                 {/* Rating Stars and sold chip */}
                 <View style={styles.rateAndSold}>
                     {/* Rating */}
-                    <View style={styles.ratingContainer}>
-                        <Ionicons name={rating % 1 === 0 ? "star" : "star-half"} size={hp(1.8)} color="#525252"/>
-                        <Text style={styles.rating}>{rating}</Text>
-                    </View>
+                    <RatingIconText rating={rating}/>
 
                     {/* Separator */}
                     <View style={styles.separator}/>
 
                     {/* Sold */}
-                    <View style={styles.soldContainer}>
-                        <Text style={styles.sold}>{soldCount}</Text>
-                        <Ionicons name="cart-outline" size={hp(1.8)} color="#525252"/>
-                    </View>
+                    <TextWithIconChip icon="cart-outline" text={`${soldCount}`}/>
                 </View>
 
                 {/* Price */}
                 <Text style={styles.price}>Rs. {price}</Text>
 
-            </View>
+            </Pressable>
         </>
     );
 }
@@ -95,35 +90,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 
-    ratingContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    rating: {
-        marginLeft: 4,
-        fontSize: hp(1.8),
-        fontWeight: '600',
-        color: '#525252',
-    },
+
     separator: {
         height: hp(1.8),
         width: 2,
         backgroundColor: '#525252',
         marginHorizontal: hp(1.3),
-    },
-    soldContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: '#f2f2f5',
-        borderRadius: 10,
-        paddingHorizontal: 8,
-        paddingVertical: 4,
-    },
-    sold: {
-        marginRight: 4,
-        fontSize: hp(1.8),
-        fontWeight: '600',
-        color: '#525252',
     },
 
     price: {

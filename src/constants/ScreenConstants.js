@@ -15,6 +15,7 @@ export const ScreenNames = {
     OFFERS: 'Offers',
     POPULAR: 'Popular',
     CATEGORY: 'Category',
+    PRODUCT_DETAILS: 'ProductDetails',
 
     // Cart Stack
     CART: 'Cart',

@@ -1,13 +1,17 @@
+// Auth Stack
 import OAuthScreen from "./Auth/OAuthScreen";
 import CreateAccount from "./Auth/CreateAccount";
 import SignInScreen from "./Auth/SignInScreen";
 import ForgotPasswordScreen from "./Auth/ForgotPasswordScreen";
 import OtpVerification from "./Auth/OtpVerification";
+
+// Home Stack
 import HomeScreen from "./Home/HomeScreen";
 import Notifications from "./Home/Notifications";
 import OffersScreen from "./Home/OffersScreen";
 import MostPopularScreen from "./Home/MostPopularScreen";
 import CategoryScreen from "./Home/CategoryScreen";
+import ProductDetail from "./Home/ProductDetail";
 
 export {
 	OAuthScreen,
@@ -19,5 +23,6 @@ export {
 	Notifications,
 	OffersScreen,
 	MostPopularScreen,
-	CategoryScreen
+	CategoryScreen,
+	ProductDetail
 };

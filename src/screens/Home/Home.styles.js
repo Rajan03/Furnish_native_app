@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import styled from "styled-components/native";
-import {hp, IS_SMALL_DEVICE, SCREEN_WIDTH} from "utils";
+import {hp, IS_SMALL_DEVICE, SCREEN_WIDTH, SCREEN_HEIGHT} from "utils";
 
 //#region Common Styles
 export const chipsContainer = {
@@ -172,3 +172,151 @@ export const OfferScreenChipsStyles = {
 	paddingHorizontal: hp(2),
 }
 //#endregion Offers Screen
+
+//#region Product Details Screen
+export const ProductDetailsStyles = StyleSheet.create({
+	container: {
+		flex: 1,
+		flexDirection: "column",
+	},
+	backIcon: {
+		fontSize: hp(3),
+		color: "#525252",
+		fontWeight: "bold",
+	},
+	productNameContainer: {
+		flexDirection: "row",
+		justifyContent: "space-between",
+		alignItems: "center",
+	},
+	productName: {
+		fontSize: hp(3.2),
+		fontWeight: "800",
+		color: "#525252",
+	},
+	icon: {
+		fontSize: hp(3.2),
+		color: "#525252",
+	},
+	rateAndSold: {
+		alignSelf: "flex-start",
+		flexDirection: "row",
+		marginTop: hp(1.2),
+	},
+	sectionTitle: {
+		fontSize: hp(2),
+		fontWeight: "700",
+		color: "#525252",
+	},
+	description: {
+		fontSize: hp(1.6),
+		color: "#525252",
+		marginTop: hp(1.2),
+	},
+	priceHelperText: {
+		fontSize: hp(1.6),
+		color: "#8a8a8a",
+	},
+	price: {
+		fontSize: hp(2.5),
+		fontWeight: "700",
+		color: "#525252"
+	},
+	cartBtn: {
+		flex: 1,
+		marginLeft: hp(3),
+		marginRight: hp(1.5),
+	},
+	cartBtnContent: {
+		flexDirection: "row",
+		justifyContent: "center",
+		alignItems: "center",
+	},
+	cartIcon: {
+		fontSize: hp(2),
+		color: "#fff",
+		marginRight: hp(1),
+	},
+	cartBtnTxt: {
+		fontSize: hp(1.6),
+		fontWeight: "600",
+		color: "#fff",
+	}
+});
+
+export const ProductImageContainer = styled.View`
+  flex: 1;
+  max-height: ${SCREEN_HEIGHT / 2}px;
+  min-height: ${SCREEN_HEIGHT / 3}px;
+  position: relative;
+  flex-direction: column;
+`;
+export const BackIconBtn = styled.Pressable`
+  position: absolute;
+  top: ${hp(2)}px;
+  left: ${hp(2)}px;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: ${hp(.6)}px;
+  background-color: #f2f2f5;
+  border-radius: 30px;
+  z-index: 1;
+`;
+export const ProductBannerImage = styled.Image`
+  flex: 1;
+  width: 100%;
+`;
+
+export const ProductDetailsContainer = styled.View`
+  flex: 1;
+  padding: ${hp(2)}px;,
+`;
+export const ProductNameAndSoldContainer = styled.View`
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding-bottom: ${hp(2)}px;
+`;
+export const ratingComponent = {
+	marginLeft: hp(1.5),
+}
+export const soldComponent = {
+	backgroundColor: "#ececec",
+}
+export const ProductDescriptionContainer = styled.View`
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding-top: ${hp(1.2)}px;
+  border-top-width: 1px;
+  border-top-color: #f1f1f1;
+`;
+export const QuantityBtnContainer = styled.View`
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: ${hp(2)}px;
+`;
+export const QuantityBtn = {
+	marginLeft: hp(1.5),
+}
+export const ActionArea = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: ${hp(2)}px;
+  border-top-width: 1px;
+  border-top-color: #f1f1f1;
+`;
+export const PriceBox = styled.View`
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+`;
+export const CartBtn = {
+	borderRadius: 90,
+}
+//#endregion Product Details Screen

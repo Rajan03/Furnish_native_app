@@ -185,7 +185,7 @@ export const products = [
 				rating: 4.5,
 				review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam lacinia,",
 			},
-		]
+		],
 	},
 	{
 		id: 2,
@@ -204,7 +204,7 @@ export const products = [
 				rating: 4.5,
 				review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam lacinia,",
 			},
-		]
+		],
 	},
 	{
 		id: 3,
@@ -223,7 +223,7 @@ export const products = [
 				rating: 4.5,
 				review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam lacinia,",
 			},
-		]
+		],
 	},
 	{
 		id: 4,
@@ -242,7 +242,7 @@ export const products = [
 				rating: 4.5,
 				review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam lacinia,",
 			},
-		]
+		],
 	},
 	{
 		id: 5,
@@ -261,6 +261,6 @@ export const products = [
 				rating: 4.5,
 				review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam lacinia,",
 			},
-		]
+		],
 	},
 ];

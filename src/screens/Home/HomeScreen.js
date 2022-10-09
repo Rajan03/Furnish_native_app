@@ -109,6 +109,7 @@ const HomeScreen = ({navigation}) => {
 					<FlatList data={products}
 										key={'horizontal'}
 										renderItem={({item}) => <ProductCard
+											onCardPress={() => navigation.navigate(ScreenNames.PRODUCT_DETAILS, {productId: item.id})}
 											product={item}
 											styles={!(item.id % 2) ? EvenProductCardStyles : OddProductCardStyles}/>}
 										numColumns={2}

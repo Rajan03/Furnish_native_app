@@ -1,5 +1,6 @@
 import OAuthBtn from "./OAuthBtn/OAuthBtn";
 import TextBtnContained from "./ActionBtns/TextBtnContained";
+import IncDecBtn from "./ActionBtns/IncDecBtn";
 import InputWithIcon from "./inputs/InputWithIcon";
 import OtpInput from "./inputs/OtpInput";
 import SearchInput from "./inputs/SearchInput";
@@ -12,6 +13,8 @@ import ProductCard from "./cards/ProductCard";
 import NotificationsCardWithDate from "./cards/NotificationsCardWithDate";
 import ScreenHeader from "./Headers/ScreenHeader";
 import HorizontalChipSet from "./Chip/HorizontalChipSet";
+import TextWithIconChip from "./Chip/TextWithIconChip";
+import RatingIconText from "./Chip/RatingIconText";
 
 export {
     OAuthBtn,
@@ -27,5 +30,8 @@ export {
     ProductCard,
     NotificationsCardWithDate,
     ScreenHeader,
-    HorizontalChipSet
+    HorizontalChipSet,
+    TextWithIconChip,
+    RatingIconText,
+    IncDecBtn
 };
