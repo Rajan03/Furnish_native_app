@@ -12,6 +12,7 @@ import OffersScreen from "./Home/OffersScreen";
 import MostPopularScreen from "./Home/MostPopularScreen";
 import CategoryScreen from "./Home/CategoryScreen";
 import ProductDetail from "./Home/ProductDetail";
+import SearchScreen from "./Home/SearchScreen";
 
 export {
 	OAuthScreen,
@@ -24,5 +25,6 @@ export {
 	OffersScreen,
 	MostPopularScreen,
 	CategoryScreen,
-	ProductDetail
+	ProductDetail,
+	SearchScreen
 };

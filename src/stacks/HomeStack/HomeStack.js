@@ -1,6 +1,6 @@
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 
-import {HomeScreen, Notifications, OffersScreen, MostPopularScreen, CategoryScreen, ProductDetail} from "screens";
+import {HomeScreen, Notifications, OffersScreen, MostPopularScreen, CategoryScreen, ProductDetail, SearchScreen} from "screens";
 import {SafeAreaLayout} from "container";
 import {ScreenNames} from "constants/ScreenConstants";
 
@@ -17,6 +17,7 @@ export const HomeStack = () => {
 					<Stack.Screen name={ScreenNames.POPULAR} component={MostPopularScreen}/>
 					<Stack.Screen name={ScreenNames.CATEGORY} component={CategoryScreen}/>
 					<Stack.Screen name={ScreenNames.PRODUCT_DETAILS} component={ProductDetail}/>
+					<Stack.Screen name={ScreenNames.SEARCH} component={SearchScreen}/>
 				</Stack.Navigator>
 			</SafeAreaLayout>
 		</>
