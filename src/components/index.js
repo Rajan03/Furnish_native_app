@@ -12,6 +12,7 @@ import CategoryCard from "./cards/CategoryCard";
 import ProductCard from "./cards/ProductCard";
 import NotificationsCardWithDate from "./cards/NotificationsCardWithDate";
 import ScreenHeader from "./Headers/ScreenHeader";
+import SectionHeader from "./Headers/SectionHeader";
 import HorizontalChipSet from "./Chip/HorizontalChipSet";
 import TextWithIconChip from "./Chip/TextWithIconChip";
 import RatingIconText from "./Chip/RatingIconText";
@@ -33,5 +34,6 @@ export {
     HorizontalChipSet,
     TextWithIconChip,
     RatingIconText,
-    IncDecBtn
+    IncDecBtn,
+    SectionHeader
 };

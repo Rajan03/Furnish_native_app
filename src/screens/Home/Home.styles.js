@@ -16,29 +16,6 @@ export const HomeStyles = StyleSheet.create({
 	offerCard: {marginTop: hp(2)},
 });
 
-//#region Common Styles
-export const SectionHeaderContainer = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: stretch;
-`;
-export const SectionHeader = styled.Text`
-  font-size: ${hp(2.5)}px;
-  font-weight: 700;
-  color: #525252;
-`;
-export const SectionHeaderBtn = styled.Pressable`
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-`;
-export const SectionHeaderBtnTxt = styled.Text`
-  font-size: ${hp(1.6)}px;
-  font-weight: 600;
-  color: #525252;
-`;
-//#endregion Common Styles
-
 //#region Header
 export const Header = styled.View`
   height: ${hp(10)}px;

@@ -3,7 +3,7 @@ import {Ionicons} from '@expo/vector-icons';
 import {FlatList} from "react-native";
 
 import {SafeAreaLayout, ScrollableLayout} from "container";
-import {CategoryCard, OfferCard, ProductCard, SearchInput, HorizontalChipSet} from "components";
+import {CategoryCard, OfferCard, ProductCard, SearchInput, HorizontalChipSet, SectionHeader} from "components";
 import {ScreenNames} from "constants/ScreenConstants";
 import {hp} from "utils";
 import {
@@ -19,26 +19,12 @@ import {
 	MostPopularProducts,
 	OddProductCardStyles,
 	ProductsRow,
-	SectionHeader,
-	SectionHeaderBtn,
-	SectionHeaderBtnTxt,
-	SectionHeaderContainer,
 	SpecialOfferLayout,
 	UserInfo,
 	UserName,
 	UserNameTxt, chipsContainer
 } from "./Home.styles";
 import {offers, categories, products} from "constants/data";
-
-// @TODO: Create a new component for the Section Header
-const SectionHeading = ({title, onPress}) => (
-	<SectionHeaderContainer>
-		<SectionHeader>{title}</SectionHeader>
-		<SectionHeaderBtn onPress={onPress}>
-			<SectionHeaderBtnTxt>See All</SectionHeaderBtnTxt>
-			<Ionicons name="chevron-forward-outline" size={16} color="#525252"/>
-		</SectionHeaderBtn>
-	</SectionHeaderContainer>)
 
 const HomeScreen = ({navigation}) => {
 	const [search, setSearch] = useState('');
@@ -80,7 +66,7 @@ const HomeScreen = ({navigation}) => {
 				{/* Special Offer Card */}
 				<SpecialOfferLayout>
 					{/* Section Heading */}
-					<SectionHeading title={"Special Offer"} onPress={() => viewAllPressed(ScreenNames.OFFERS)}/>
+					<SectionHeader title={"Special Offer"} onPress={() => viewAllPressed(ScreenNames.OFFERS)}/>
 
 					{/* Offer Card Slider */}
 					<OfferCard onPress={() => console.log("Offer Card Pressed")}
@@ -98,7 +84,7 @@ const HomeScreen = ({navigation}) => {
 				{/* Most Popular */}
 				<MostPopularLayout>
 					{/* Section Heading */}
-					<SectionHeading title={"Most Popular"} onPress={() => viewAllPressed(ScreenNames.POPULAR)}/>
+					<SectionHeader title={"Most Popular"} onPress={() => viewAllPressed(ScreenNames.POPULAR)}/>
 
 					{/* Categories ScrollView */}
 					<HorizontalChipSet styles={chipsContainer} categories={categories} selectedCategory={popularFilter} onSelectionChange={setPopularFilter}/>
